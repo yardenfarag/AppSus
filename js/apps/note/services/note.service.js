@@ -4,7 +4,7 @@ import { storageService } from '../../../general/services/async-storage.service.
 const NOTE_KEY = 'noteDB'
 _createNotes()
 
-export const bookService = {
+export const noteService = {
     query,
     get,
     remove,

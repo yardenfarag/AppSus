@@ -1,5 +1,11 @@
+import { noteService } from '../services/note.service.js'
+
+import noteList from '../cmps/note-list.cmp.js'
+
 export default {
     template: `
-        <h1>Hello</h1>
+        <section className="note-app">
+            <note-list/>
+        </section>
     `
 }
