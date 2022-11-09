@@ -1,3 +1,5 @@
+@import './note-list.css';
+
 .note-app {
     background-color: yellow;
 }
