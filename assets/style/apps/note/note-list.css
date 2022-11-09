@@ -1,9 +1,27 @@
 .note-list {
-    background-color: rgb(177, 243, 177);
+    background-color: rgb(52, 50, 53);
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    list-style-type: none;
+    padding: 10px;
+    border: 1px solid black;
+    width: 85vw;
+    margin: auto;
 }
 
 .note {
-    width: 240px;
-    height: 100px;
+    background-color: rgb(52, 50, 53);
+    color: gold;
+    box-shadow: -2px -2px 6px white;
+    outline: 1px solid whitesmoke;
+    border-radius: 5px;
+    /* width: 240px; */
+    /* height: 100px; */
+    display: grid;
+    padding: 10px;
+}
+
+.note .note-todos {
+    background-color: white;
 }

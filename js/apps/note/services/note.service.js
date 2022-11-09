@@ -71,7 +71,7 @@ function _createNotes() {
             { 
                 id: "n102", 
                 type: "note-img", 
-                info: { url: "http://some-img/me", txt: "Bobi and Me" }, 
+                info: { imgName:'note-image', txt: "Bobi and Me" }, 
                 style: { backgroundColor: "#00d" } 
             }, 
             { 
