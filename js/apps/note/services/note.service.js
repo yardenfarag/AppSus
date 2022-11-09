@@ -71,18 +71,25 @@ function _createNotes() {
             { 
                 id: "n102", 
                 type: "note-img", 
-                info: { imgName:'note-image', txt: "Bobi and Me" }, 
+                info: { imgName:'note-cat-2', txt: "pepsi ninja" }, 
                 style: { backgroundColor: "#00d" } 
             }, 
             { 
                 id: "n103", 
                 type: "note-todos", 
-                info: { txt: "Get my stuff together", 
-                todos: [ 
+                info: { 
+                    txt: "Get my stuff together", 
+                    todos: [ 
                     { txt: "Driving liscence", doneAt: null }, 
                     { txt: "Coding power", doneAt: 187111111 } 
                 ] } 
-            }
+            },
+            { 
+                id: "n104", 
+                type: "note-video", 
+                info: { vidUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQEscnKCD94HsAKQD-Pr94vLMOKxDd0e1gXttfn2n2QUF1qMZPoDaoLOx_H2hig7w0uYM&usqp=CAU', txt: "OMG" }, 
+                style: { backgroundColor: "#00d" } 
+            },
         ]
         utilService.saveToStorage(NOTE_KEY, notes)
     }
