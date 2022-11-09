@@ -1,14 +1,20 @@
 import mailAdd from '../cmps/mail-add.cmp.js'
 import mailPreview from '../cmps/mail-preview.cmp.js'
 import mailFilter from '../cmps/mail-filter.cmp.js'
+import mailDetails from '../cmps/mail-details.cmp.js'
+import { eventBus } from '../../../general/services/event-bus.service.js'
 
 
 export default {
     name: 'mail-list',
-    props:['mailsData'],
+    emits: ["remove", "mailAdded", "read"],
+    props: ['mailsData'],
     template: `
 
-    <mail-add />
+    <mail-add v-if="showAdd" />
+    <mail-details @details="openDetails" v-if="showDetails" :mail="detailsOfMail"/>
+
+
         <section v-if="showList" class="mail-main-list">
         <mail-filter @mailFilter="setFilter"/>
 
@@ -17,46 +23,59 @@ export default {
                     v-for="mail in mailsToShow" 
                     :key="mail.id">
             
-                    <mail-preview  :mail="mail"/>
+                    <mail-preview @details="openDetails" :mail="mail"/>
                     
                 </article>
             </section>
             
 
     `,
-    data(){
-        return{
+    data() {
+        return {
             showList: true,
+            showAdd: false,
+            showDetails: false,
+            detailsOfMail: {},
             mails: this.mailsData,
             filterBy: {
                 subject: '',
-                type:'',
+                type: '',
                 isRead: false,
                 isStar: false,
             }
         }
     },
     computed: {
-        mailsToShow(){
-            
+        mailsToShow() {
             const regex = new RegExp(this.filterBy.subject, 'i')
             var mails = this.mails.filter(mail => regex.test(mail.subject))
 
-            if(this.filterBy.isRead){
+            if (this.filterBy.isRead) {
                 mails.filter(mail => mail.isRead === this.filterBy.isRead)
-            } 
+            }
             return mails
         }
     },
-      methods: {
-        setFilter(filterParams){
+    methods: {
+        setFilter(filterParams) {
             this.filterBy = filterParams
-        }
+        },
+        mailAdd() {
+            this.showAdd = !this.showAdd
+        },
+        openDetails(mail){
+            this.detailsOfMail = mail
+            this.showList = !this.showList
+            this.showDetails = !this.showDetails
+        },
+
     },
-    created(){
+    created() {
+        eventBus.on('addMail', this.mailAdd)
     },
     components: {
         mailAdd,
+        mailDetails,
         mailPreview,
         mailFilter,
     },

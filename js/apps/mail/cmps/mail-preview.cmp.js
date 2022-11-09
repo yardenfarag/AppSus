@@ -1,9 +1,14 @@
+
+
 export default {
+    inheritAttrs:false,
+    name: 'mail-preview',
     props: ['mail'],
+    emits: ['remove', 'details', 'read'],
     template: `
-        <section class="mail-preview flex">
+        <section  class="mail-preview flex">
             <router-link :to="'/mail/' + mail.id">         
-            <section class="mail-card-content">
+            <section @click="details(mail)" class="mail-card-content">
                     
 
                 <h6>{{ mail.from }}</h6>
@@ -17,6 +22,33 @@ export default {
                     <li>{{ mail.sentAt }}</li>
                 </ul>
 
+                <button @click="remove(mail.id)">remove</button>
+                <button @click="isRed = !isRed" :class="readClass" >read</button>
+                <button>star</button>
+
         </section>
-    `
+    `,
+    data(){
+        return{
+            isRed: true
+        }
+    },
+    computed:{
+        readClass(){
+            return {readClassRed: this.isRed, readClassblue: !this.isRed,}
+        }
+    },
+       methods: {
+        remove(mailId){
+            this.$parent.$emit('remove', mailId)
+            console.log(mailId)
+        },
+        details(mail){
+            console.log(mail)
+            this.$emit('details', mail)
+        },
+        read(mail){
+            this.$parent.$emit('read', mail)
+        }
+    },
 }

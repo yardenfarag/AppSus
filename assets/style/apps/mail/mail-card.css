@@ -1,6 +1,7 @@
 .mail-card{
     max-height: 4rem; 
     border-bottom:1px solid black ;
+
 }
 .mail-card-content{
     flex-direction: column;
@@ -9,4 +10,8 @@
 .mail-card-content:hover{
     cursor: pointer;
 
+}
+
+.readClassRed{
+    color: red;
 }

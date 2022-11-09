@@ -1,9 +1,12 @@
-export default {
-    template: `
+import { eventBus } from '../../../general/services/event-bus.service.js'
 
+export default {
+    name: 'mail-side-nav',
+    emits: ['mailAdded'],
+    template: `
     <section class="mail-side-nav">
 
-        <button>new mail</button>
+    <button @click="addMail">new mail</button>
 
         <ul>
             <li>inbox</li>
@@ -12,5 +15,10 @@ export default {
             <li>trash</li>
         </ul>
     </section>
-    `
+    `,
+    methods: {
+        addMail() {
+            eventBus.emit('addMail', true)
+        }
+    },
 }

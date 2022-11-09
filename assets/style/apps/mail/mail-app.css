@@ -1,4 +1,5 @@
 @import '/assets/style/apps/mail/mail-card.css';
+@import '/assets/style/apps/mail/mail-add.css';
 
 .mail-app{
     background-color: rgb(173, 173, 173);
