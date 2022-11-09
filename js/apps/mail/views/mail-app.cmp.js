@@ -9,11 +9,15 @@ export default {
     template: `
             <section class="mail-app">
 
-            <mail-filter />
+            <mail-filter @mailFilter="setFilter"/>
 
             <section class="mail-main-container flex">
+
                 <mail-side-nav />
-                <mail-list />
+
+                <mail-list v-if="mails" :mails="mailsToShow"/>
+                
+
             </section>
 
 
@@ -21,16 +25,45 @@ export default {
             </section>
     `,
     data() {
-        return {}
+        return {
+            mails: null,
+            filterBy: {
+                subject: '',
+                type:'',
+                isRead: false,
+                isStar: false,
+            }
+        }
     },
-
     components: {
         mailFilter,
-        mailList, 
+        mailList,
         mailSideNav,
     },
-    created() {},
-    methods: {},
-    computed: {},
-    unmounted() {},
+    created() {
+        mailService.query().then(mails => { 
+            this.mails = mails 
+            console.log(this.mails)
+        })
+    },
+    methods: {
+        setFilter(filterParams){
+            this.filterBy = filterParams
+            
+        }
+    },
+    computed: {
+        mailsToShow(){
+            const regex = new RegExp(this.filterBy.subject, 'i')
+            var mails = this.mails.filter(mail => regex.test(mail.subject))
+            if(this.filterBy.isRead){
+                mails.filter(mail => mail.isRead === this.filterBy.isRead)
+                console.log(mails)
+                console.log(this.filterBy.isRead)
+            } 
+            return mails
+            
+        }
+    },
+    unmounted() { },
 }

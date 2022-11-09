@@ -1,5 +1,7 @@
 export default {
+    name: 'mail-details',
+    props: ['mail'],
     template: `
-        <h1>Hello</h1>
+        <h1>details</h1>
     `
 }

@@ -1,1 +1,36 @@
-export const mailsData = [{}]
+export const mailsData = [
+        { 
+            id: 'e101', 
+            subject: 'Miss !', 
+            body: 'Would love to catch up sometimes', 
+            isRead: true, 
+            sentAt : 1551133930594, 
+            from: 'momo@momo.com', 
+            to: 'user@appsus.com',
+            type: 'income',
+            isStar: true,
+        },
+        { 
+            id: 'e102', 
+            subject: ' you!', 
+            body: 'Would love to catch up sometimes', 
+            isRead: false, 
+            sentAt : 1551133930700, 
+            from: 'momot@momo.com', 
+            to: 'user@appsus.com',
+            type: 'sent',
+            isStar: false,
+        },
+        { 
+            id: 'e103', 
+            subject: 'Miss you!', 
+            body: 'Would love to catch up sometimes', 
+            isRead: false, 
+            sentAt : 1551133930800, 
+            from: 'momog@momo.com', 
+            to: 'user@appsus.com',
+            type: 'trash',
+            isStar: true, 
+        },
+    
+]

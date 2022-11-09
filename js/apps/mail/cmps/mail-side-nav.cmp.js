@@ -3,7 +3,14 @@ export default {
 
     <section class="mail-side-nav">
 
-        <h1>side nav</h1>
+        <button>new mail</button>
+
+        <ul>
+            <li>inbox</li>
+            <li>sent</li>
+            <li>drafts</li>
+            <li>trash</li>
+        </ul>
     </section>
     `
 }
