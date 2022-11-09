@@ -12,6 +12,7 @@ export const noteService = {
     getEmptyNote,
     getNextNoteId,
     getPrevNoteId,
+    updateNote,
 }
 
 
@@ -33,6 +34,10 @@ function save(note) {
     notes.push(note)
     utilService.saveToStorage(NOTE_KEY, notes)
     return note
+}
+
+function updateNote(note) {
+    return storageService.put(NOTE_KEY, note)
 }
 
 function getEmptyNote() {
@@ -77,6 +82,7 @@ function _createNotes() {
             { 
                 id: "n103", 
                 type: "note-todos", 
+                isPinned: false,
                 info: { 
                     txt: "Get my stuff together", 
                     todos: [ 
@@ -87,6 +93,7 @@ function _createNotes() {
             { 
                 id: "n104", 
                 type: "note-video", 
+                isPinned: false,
                 info: { vidUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQEscnKCD94HsAKQD-Pr94vLMOKxDd0e1gXttfn2n2QUF1qMZPoDaoLOx_H2hig7w0uYM&usqp=CAU', txt: "OMG" }, 
                 style: { backgroundColor: "#00d" } 
             },
