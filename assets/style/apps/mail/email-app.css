@@ -1,0 +1,27 @@
+
+.mail-app{
+    background-color: rgb(173, 173, 173);
+    min-height: 80vh;
+}
+
+.mail-main-container{
+    height: 100%;
+    
+}
+
+.mail-filter{
+    background-color: bisque;
+    margin: 0;
+}
+
+.mail-main-list{
+    background-color: aquamarine;
+    height: 100%;
+    width: 75%;
+}
+
+.mail-side-nav{
+    background-color: azure;
+    height: 100%;
+    width: 25%;
+}

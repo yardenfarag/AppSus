@@ -1,6 +1,7 @@
+import { mailsData }  from '../data/demo-data.js'
+
 import { utilService } from '../../../general/services/util.service.js'
 import { storageService } from '../../../general/services/async-storage.service.js'
-import mailsData  from '../data/demo-data.js' 
 
 const MAILS_KEY = 'mailsDB'
 _createmails()

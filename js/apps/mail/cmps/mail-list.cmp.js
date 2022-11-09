@@ -1,5 +1,8 @@
 export default {
     template: `
-        <h1>Hello</h1>
+    <section class="mail-main-list">
+
+        <h1>list</h1>
+    </section>
     `
 }
