@@ -14,5 +14,12 @@
 @import 'cmps/user-msg.css';
 
 /* Apps */
+
+/* mail */
 @import 'apps/mail/email-app.css';
+
+/* notes */
 @import 'apps/note/note-app.css';
+
+/* books */
+@import 'apps/books/book-app.css';
