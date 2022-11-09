@@ -8,10 +8,13 @@ export default {
     props: ['note'],
     template: `
         <section class="note-preview">
-            <div class="note">
+            <div :style="{backgroundColor: note.style.backgroundColor}" class="note">
                 <div className="note-editor">
                     <button @click="pinNote(note.id)" class="note-editor-btn">📌</button>
-                    <button @click="changeStyle(note.id)" class="note-editor-btn">🌈</button>
+                    <button @click="toggleColorBtn()" class="note-editor-btn">🌈</button>
+                    <div v-if="colorBtnSelected" class="note-color-selector">
+                        <span @click="changeStyle(note.id, color)" class="note-color" v-for="color in colors" :style="{ 'background-color': color }">Co</span>
+                    </div>
                     <button @click="shareToMail(note.id)" class="note-editor-btn">✉️</button>
                     <button @click="editNote(note.id)" class="note-editor-btn">📝</button>
                     <button @click="removeNote(note.id)" class="note-editor-btn">✖️</button>
@@ -25,18 +28,22 @@ export default {
     `,
     data() {
         return {
-
+            colorBtnSelected: false,
+            colors: ['transparent', '#49caae','#3296e1','#9957bb', '#344860', '#54be76', '#f1c500', '#eb705e', '#c13a24', '#ebeff0'],
         }
     },
     methods: {
+        toggleColorBtn() {
+            this.colorBtnSelected = !this.colorBtnSelected
+        },
         removeNote(noteId) {
             this.$parent.$emit('remove', noteId)
         },
         pinNote(noteId) {
             this.$parent.$emit('pin', noteId)
         },
-        changeStyle(noteId) {
-            this.$parent.$emit('change-style', noteId)
+        changeStyle(noteId, color) {
+            this.$parent.$emit('changeStyle', noteId, color)
         },
         shareToMail(noteId) {
             this.$parent.$emit('share', noteId)
@@ -44,11 +51,6 @@ export default {
         editNote(noteId) {
             this.$parent.$emit('edit', noteId)
         }      
-    },
-    computed: {
-        renderImg() {
-            return `../../../../../assets/img/note/${this.note.info.imgName}.jpeg`
-        }
     },
     components: {
         noteImg,

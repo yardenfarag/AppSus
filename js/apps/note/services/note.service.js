@@ -71,13 +71,15 @@ function _createNotes() {
                 id: "n101", 
                 type: "note-txt", 
                 isPinned: true, 
-                info: { txt: "Fullstack Me Baby!" } 
+                info: { txt: "Fullstack Me Baby!" },
+                style: { backgroundColor: "transparent" }, 
             }, 
             { 
                 id: "n102", 
                 type: "note-img", 
-                info: { imgName:'note-cat-2', txt: "pepsi ninja" }, 
-                style: { backgroundColor: "#00d" } 
+                info: { imgUrl:'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80', 
+                        txt: "WOW" }, 
+                style: { backgroundColor: "transparent" }, 
             }, 
             { 
                 id: "n103", 
@@ -87,15 +89,16 @@ function _createNotes() {
                     txt: "Get my stuff together", 
                     todos: [ 
                     { txt: "Driving liscence", doneAt: null }, 
-                    { txt: "Coding power", doneAt: 187111111 } 
-                ] } 
+                    { txt: "Coding power", doneAt: 187111111 }, 
+                ] }, 
+                style: { backgroundColor: "transparent" }, 
             },
             { 
                 id: "n104", 
                 type: "note-video", 
                 isPinned: false,
-                info: { vidUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQEscnKCD94HsAKQD-Pr94vLMOKxDd0e1gXttfn2n2QUF1qMZPoDaoLOx_H2hig7w0uYM&usqp=CAU', txt: "OMG" }, 
-                style: { backgroundColor: "#00d" } 
+                info: { vidUrl: 'https://www.youtube.com/embed/wtG6I5wgHuA', txt: "OMG" }, 
+                style: { backgroundColor: "transparent" }, 
             },
         ]
         utilService.saveToStorage(NOTE_KEY, notes)

@@ -2,13 +2,8 @@ export default {
     props: ['info'],
     template: `
             <section class="note-img">
-            <img :src="renderImg">
+            <img :src="info.imgUrl">
             <p>{{info.txt}}</p>
             </section>
     `,
-    computed: {
-        renderImg() {
-            return `../../../../../assets/img/note/${this.info.imgName}.jpeg`
-        }
-    }
 }

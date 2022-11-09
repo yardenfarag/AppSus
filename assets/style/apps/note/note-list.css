@@ -48,3 +48,25 @@
     width: 90%;
 }
 
+.note-color-selector{
+    position: absolute;
+    border: 1px black solid;
+    background-color: thistle;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-block-start: 25px;
+}
+
+.note-color{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: transparent;
+
+}
+.note-color:hover{
+    cursor: pointer;
+    border: black 1px solid;
+}
