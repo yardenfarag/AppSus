@@ -7,5 +7,8 @@ export default {
         <section className="note-app">
             <note-list/>
         </section>
-    `
+    `,
+    components: {
+        noteList,
+    }
 }
