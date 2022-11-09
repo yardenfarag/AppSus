@@ -1,5 +1,6 @@
 export default {
+    name: 'mail-add',
     template: `
-        <h1>Hello</h1>
+    <h1>yooooo</h1>
     `
 }
