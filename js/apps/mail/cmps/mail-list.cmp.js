@@ -39,10 +39,12 @@ export default {
             mails: this.mailsData,
             filterBy: {
                 subject: '',
-                type: '',
+                type: 'inbox',
                 isRead: false,
                 isStar: false,
-            }
+            },
+            
+                
         }
     },
     computed: {
@@ -50,11 +52,20 @@ export default {
             const regex = new RegExp(this.filterBy.subject, 'i')
             var mails = this.mails.filter(mail => regex.test(mail.subject))
 
-            if (this.filterBy.isRead) {
-                mails.filter(mail => mail.isRead === this.filterBy.isRead)
+            if (this.filterBy.type) {
+                mails = mails.filter(mail => mail.type === this.filterBy.type)
             }
+            if (this.filterBy.isRead) {
+                mails = mails.filter(mail => mail.isRead === this.filterBy.isRead)
+            }
+            if (this.filterBy.isStar) {
+                mails = mails.filter(mail => mail.isStar === this.filterBy.isStar)
+                console.log('star', this.filterBy.isStar)
+            }
+
             return mails
-        }
+        },
+  
     },
     methods: {
         setFilter(filterParams) {
@@ -63,7 +74,7 @@ export default {
         mailAdd() {
             this.showAdd = !this.showAdd
         },
-        openDetails(mail){
+        openDetails(mail) {
             this.detailsOfMail = mail
             this.showList = !this.showList
             this.showDetails = !this.showDetails

@@ -23,8 +23,8 @@ export default {
                 </ul>
 
                 <button @click="remove(mail.id)">remove</button>
-                <button @click="isRed = !isRed" :class="readClass" >read</button>
-                <button>star</button>
+                <button @click="read(mail)" :class="readClass" >read</button>
+                <button @click="star(mail)" :class="starClass">star</button>
 
         </section>
     `,
@@ -35,7 +35,10 @@ export default {
     },
     computed:{
         readClass(){
-            return {readClassRed: this.isRed, readClassblue: !this.isRed,}
+            return {readClassRed: this.mail.isRead, readClassblue: !this.mail.isRead,}
+        },
+        starClass(){
+            return {readClassRed: this.mail.isStar, readClassblue: !this.mail.isStar,}
         }
     },
        methods: {
@@ -48,6 +51,11 @@ export default {
             this.$emit('details', mail)
         },
         read(mail){
+            mail.isRead = !mail.isRead
+            this.$parent.$emit('read', mail)
+        },
+        star(mail){
+            mail.isStar = !mail.isStar
             this.$parent.$emit('read', mail)
         }
     },

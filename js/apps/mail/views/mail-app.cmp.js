@@ -15,7 +15,7 @@ export default {
 
             <section class="mail-main-container flex">
 
-                <mail-side-nav />
+                <mail-side-nav :mailsData="mailsData"/>
 
                 <mail-list v-if="mailsData"
                            :mailsData="mailsData"
@@ -48,11 +48,13 @@ export default {
                 })
         },
         save(mail){
-            console.log(mail)
+
             mailService.save(mail)
-                .then(() => {
+                .then((mail) => {
+
                     const idx = this.mailsData.findIndex(existMail => existMail.id === mail.id)
-                    // if(idx) this.mailsData.splice(idx, 1)
+
+                    if(idx !== -1) return 
                     this.mailsData.unshift(mail)
                     // showSuccessMsg(`mail saved (mail id: ${mail.id})`
                 })
@@ -62,6 +64,7 @@ export default {
                 })
                 
         },
+
     },
     computed: {
         mailLoad(){

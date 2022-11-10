@@ -25,8 +25,10 @@ export default {
     methods:{
         close(){
             eventBus.emit('addMail', false)
+            this.$parent.$emit('mailAdded', this.mailDraft)
         },
         save(){
+            this.mailDraft.type = 'sent'
             this.$parent.$emit('mailAdded', this.mailDraft)
             eventBus.emit('addMail', false)
         }

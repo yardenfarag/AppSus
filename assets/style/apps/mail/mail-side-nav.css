@@ -1,0 +1,18 @@
+.mail-side-nav{
+    background-color: inherit;
+    height: 80vh;
+    width: 25%;
+    padding: 1rem;
+    color: var(--clr3);
+}
+
+.mail-side-nav-category{
+   
+    cursor: pointer;
+}
+
+.add-mail-btn{
+    background-color: var(--clr2);
+    border: none;
+    border-radius: 1rem;
+}
