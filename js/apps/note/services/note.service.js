@@ -31,7 +31,6 @@ function remove(noteId) {
 function save(note) {
     note.id = utilService.makeId()
     const notes = query()
-    notes.push(note)
     utilService.saveToStorage(NOTE_KEY, notes)
     return note
 }
@@ -41,7 +40,13 @@ function updateNote(note) {
 }
 
 function getEmptyNote() {
-    return {id: '', title: '', listPrice: {amount: 0}}
+    return {
+        id: '', 
+        type: 'note-txt', 
+        isPinned: false,
+        info: {txt: ''},
+        style: { backgroundColor: "transparent" },
+    }
 }
 
 function getNextNoteId(noteId) {

@@ -1,0 +1,23 @@
+.note-edit-modal {
+    width: 600px;
+    height: 300px;
+    background-color:salmon;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.note-edit-modal .note {
+    margin: auto;
+    outline:none;
+    box-shadow: none;
+}
+
+.note-edit-modal .note .note-info {
+    text-align: center;
+}
+
+.note-text-edit {
+    width: 300px;
+}

@@ -2,6 +2,7 @@ import noteTxt from '../cmps/note-txt.cmp.js'
 import noteImg from '../cmps/note-img.cmp.js'
 import noteVideo from '../cmps/note-video.cmp.js'
 import noteTodos from '../cmps/note-todos.cmp.js'
+import noteEdit from './note-edit.cmp.js'
 
 export default {
     name: 'note-preview',
@@ -10,14 +11,19 @@ export default {
         <section class="note-preview">
             <div :style="{backgroundColor: note.style.backgroundColor}" class="note">
                 <div className="note-editor">
-                    <button @click="pinNote(note.id)" class="note-editor-btn">📌</button>
-                    <button @click="toggleColorBtn()" class="note-editor-btn">🌈</button>
+                    <div className="pinning">
+                        <button @click="pinNote(note.id)" class="note-editor-btn"><i class="fa-solid fa-thumbtack"></i></button>
+                    </div>
+                    <button @click="toggleColorBtn()" class="note-editor-btn"><i class="fa-solid fa-palette"></i></button>
                     <div v-if="colorBtnSelected" class="note-color-selector">
                         <span @click="changeStyle(note.id, color)" class="note-color" v-for="color in colors" :style="{ 'background-color': color }">Co</span>
                     </div>
-                    <button @click="shareToMail(note.id)" class="note-editor-btn">✉️</button>
-                    <button @click="editNote(note.id)" class="note-editor-btn">📝</button>
-                    <button @click="removeNote(note.id)" class="note-editor-btn">✖️</button>
+                    <button @click="shareToMail(note.id)" class="note-editor-btn"><i class="fa-solid fa-envelope"></i></button>
+                    <button @click="toggleEditModal" class="note-editor-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <div v-if="noteSelected">
+                        <note-edit :note="note"/>
+                    </div>
+                    <button @click="removeNote(note.id)" class="note-editor-btn"><i class="fa-solid fa-trash"></i></button>
                 </div>
                 <component  
                     :is="note.type" 
@@ -28,11 +34,18 @@ export default {
     `,
     data() {
         return {
+            noteSelected: false,
             colorBtnSelected: false,
             colors: ['transparent', '#49caae','#3296e1','#9957bb', '#344860', '#54be76', '#f1c500', '#eb705e', '#c13a24', '#ebeff0'],
         }
     },
     methods: {
+        toggleEditModal() {
+            this.noteSelected = !this.noteSelected
+        },
+        // closeEditModal() {
+        //     this.noteSelected = false
+        // },
         toggleColorBtn() {
             this.colorBtnSelected = !this.colorBtnSelected
         },
@@ -57,5 +70,6 @@ export default {
         noteTxt,
         noteVideo,
         noteTodos,
+        noteEdit,
     }
 }

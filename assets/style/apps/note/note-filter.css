@@ -1,0 +1,8 @@
+.note-filter {
+    padding: 15px;
+}
+
+.note-filter input {
+    border-radius: 2rem;
+    border: none;
+}

@@ -1,15 +1,19 @@
 import { noteService } from '../services/note.service.js'
-import { showErrorMsg, showSuccessMsg } from '../../../general/services/event-bus.service.js'
+import { eventBus, showErrorMsg, showSuccessMsg } from '../../../general/services/event-bus.service.js'
 
 import noteList from '../cmps/note-list.cmp.js'
 import noteAdd from '../cmps/note-add.cmp.js'
+import noteFilter from '../cmps/note-filter.cmp.js'
 
 export default {
     name: 'note-app',
     template: `
         <section className="note-app">
-            <h1>Notes!</h1>
-            <note-add/>
+            <note-add @save="addNote"/>
+            <note-filter @filter="filter"/>
+            <div className="pin-title">
+                <p>Pinned</p>
+            </div>
             <note-list v-if="pinnedNotes" :notes="pinnedNotesForShow" @changeStyle="changeNoteColor" @pin="pinNote" @remove="removeNote"/>
             <note-list v-if="notes" :notes="notesForShow" @changeStyle="changeNoteColor" @pin="pinNote" @remove="removeNote"/>
         </section>
@@ -18,9 +22,25 @@ export default {
         return {
             notes: null,
             pinnedNotes: null,
+            filterBy: {},
         }
     },
     methods: {
+        filter(filterBy) {
+            eventBus.on('filter', payload => {
+                this.filterBy = payload
+            })
+            console.log(this.filterBy);
+        },
+        addNote(newNote) {
+            console.log('lalala');
+            console.log(newNote)
+            // noteService.save(note)
+            // .then(note => {
+            //     console.log(note)
+            //     this.notes.unshift(note)
+            // })
+        },
         removeNote(noteId) {
             console.log(noteId)
             noteService.remove(noteId)
@@ -64,7 +84,9 @@ export default {
     computed: {
         notesForShow() {
             if (!this.notes) return
-            return this.notes.filter(note => !note.isPinned)
+            const regex = new RegExp(this.filterBy.txt, 'i')
+            return this.notes.filter(note => !note.isPinned &&
+                regex.test(note.info.txt))
         },
         pinnedNotesForShow() {
             if (!this.pinnedNotes) return
@@ -88,5 +110,6 @@ export default {
     components: {
         noteList,
         noteAdd,
+        noteFilter,
     }
 }

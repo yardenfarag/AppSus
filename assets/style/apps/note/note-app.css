@@ -1,6 +1,20 @@
 @import './note-list.css';
 @import './note-add.css';
+@import './note-edit.css';
+@import './note-filter.css';
 
 .note-app {
-    background-color: yellow;
+    background-color: rgb(52, 50, 53);
+    width: 85vw;
+    margin:auto;
+    border: 1px solid rgb(163, 159, 159);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.note-app .pin-title p {
+    padding: 10px;
+    font-weight: bold;
 }

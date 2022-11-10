@@ -4,6 +4,7 @@
     border: none;
     border-radius: 2rem;
     max-width: 600px;
+    padding: 10px;
 }
 
 .note-add input {
@@ -15,17 +16,17 @@
 }
 
 .note-add .note-save-btn {
-    border: 1px solid rgb(184, 181, 181);
     border-radius: 2rem;
 }
   
 .note-types button {
     border: none;
     background-color: transparent;
-    color: tomato;
+    color: whitesmoke;
     padding: 10px;
     border-radius: 2rem;
+    font-size: 1.7rem;
 }
 .note-types button:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.4);
 }

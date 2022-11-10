@@ -6,34 +6,50 @@
     gap: 10px;
     list-style-type: none;
     padding: 10px;
-    border: 1px solid black;
-    width: 85vw;
     margin: auto;
+    align-content: center;
 }
 
 .note {
     background-color: rgb(52, 50, 53);
     color: gold;
-    box-shadow: -2px -2px 6px white;
     outline: 1px solid whitesmoke;
     border-radius: 5px;
     /* width: 240px; */
     /* height: 100px; */
-    display: grid;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
 }
 
 .note-editor {
-    display: flex
+    display: flex;
+    justify-content: space-evenly;
+    opacity: 0;
+    transition: opacity .3s;
+    order:2;
+}
+
+.note:hover {
+    box-shadow: -2px -2px 6px white;
+}
+
+.note:hover .note-editor {
+    opacity:1;
 }
 
 .note-editor .note-editor-btn {
     min-width: 15px;
     min-height: 15px;
-    /* height: 20px; */
+    color: whitesmoke;
     background-color: transparent;
     border: none;
     padding: 5px;
+}
+
+.note-editor .pinning {
+    align-self: baseline;
+    justify-self: end;
 }
 
 .note-editor-btn:hover {

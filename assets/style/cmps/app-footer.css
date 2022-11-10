@@ -1,0 +1,10 @@
+.app-footer {
+    position: absolute;
+    background-color: black;
+    bottom: 0;
+    width: 100%;
+}
+
+.app-footer p {
+    text-align: center;
+}
