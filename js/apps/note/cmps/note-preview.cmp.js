@@ -9,7 +9,7 @@ export default {
     props: ['note'],
     template: `
         <section class="note-preview">
-            <div @click="toggleEditModal" :style="{backgroundColor: note.style.backgroundColor}" class="note">
+            <div :style="{backgroundColor: note.style.backgroundColor}" class="note">
                 <div className="note-editor">
                     <div className="pinning">
                         <button @click="pinNote(note.id)" class="note-editor-btn"><i class="fa-solid fa-thumbtack"></i></button>
@@ -27,7 +27,7 @@ export default {
                         </div>
                     <button @click="removeNote(note.id)" class="note-editor-btn"><i class="fa-solid fa-trash"></i></button>
                 </div>
-                <component  
+                <component  @click.stop="toggleEditModal" 
                     :is="note.type" 
                     :info="note.info"> 
                 </component>

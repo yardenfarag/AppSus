@@ -9,10 +9,10 @@ export default {
     name: 'note-edit',
     props: ['note'],
     template: `
-        <section class="note-edit-modal">
-        <div :style="{backgroundColor: note.style.backgroundColor}" class="note">
+        <section :style="{backgroundColor: note.style.backgroundColor}" class="note-edit-modal">
+        <div class="note">
                 <form @submit.stop.prevent="saveNote">
-                    <input type="text" v-model="noteToEdit.info.txt" />
+                    <input type="text" v-model="noteToEdit.info.txt" autofocus/>
                     <input v-if="noteToEdit.info.imgUrl" type="text" v-model="noteToEdit.info.imgUrl" />
                     <input v-if="noteToEdit.info.vidUrl" type="text" v-model="noteToEdit.info.vidUrl" />
                     <input v-if="noteToEdit.info.todos" type="text" v-model="noteToEdit.info.todos" />

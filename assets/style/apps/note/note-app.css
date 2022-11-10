@@ -4,18 +4,24 @@
 @import './note-filter.css';
 
 .note-app {
-    background-color: rgb(52, 50, 53);
+    background-color: var(--clr4);
     width: 85vw;
     min-height: 80vh;
     margin:auto;
-    border: 1px solid rgb(163, 159, 159);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.note-app .pin-title p {
+.note-app p {
+    font-size: 1.2rem;
     padding: 10px;
     font-weight: bold;
+    color: var(--clr1);
 }
+
+.note-app .pin-title-bottom i{
+    transform: rotate(180deg);
+}
+

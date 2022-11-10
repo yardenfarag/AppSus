@@ -1,15 +1,26 @@
 .note-edit-modal {
     width: 400px;
     height: 200px;
-    background-color:rgb(52, 50, 53);
-    border: 1px solid whitesmoke;
+    background-color:var(--clr4);
+    border: 1px solid var(--clr1);
     border-radius: 10px;
     position: absolute;
-    left: 30vh;
-    top: 20vh;
+    float: inline-end;
+}
+
+.note-edit-modal form {
     display: flex;
     flex-direction: column;
-    /* transform: translate(-50%,-50%); */
+    align-items: center;
+    justify-content: center;
+}
+
+.note-edit-modal input {
+    border:none;
+    border-radius: 2rem;
+    margin-block: 10px;
+    width: 300px;
+    background-color: var(--clr1);
 }
 
 .note-edit-modal .note {
@@ -22,6 +33,13 @@
     text-align: center;
 }
 
-.note-text-edit {
-    width: 300px;
+.note-edit-modal button{
+    border-radius: 2rem;
+    border: none;
+    background-color: var(--clr1);
 }
+
+.note-edit-modal button:hover {
+    background-color: var(--clr2);
+}
+

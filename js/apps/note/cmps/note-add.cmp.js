@@ -53,7 +53,7 @@ export default {
             }
             if (type === 'note-todos') {
                 this.noteInfoProp = 'todos'
-                this.noteToEdit.info[this.noteInfoProp] = ''
+                this.noteToEdit.info[this.noteInfoProp] = {}
                 this.typePlaceholder = "List Your Todos"
             }
             this.noteToEdit.type = type
@@ -62,8 +62,10 @@ export default {
             noteToEdit.info[this.noteInfoProp] = this.info
             const note = JSON.parse(JSON.stringify(noteToEdit))
             this.$emit('save', note)
-            this.isSecondInputShow = false
+            this.typePlaceholder = ''
             this.noteToEdit.info.txt = ''
+            this.info = ''
+            this.isSecondInputShow = false
         },
     },
     computed: {

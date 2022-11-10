@@ -1,8 +1,8 @@
 .note-list {
-    background-color: rgb(52, 50, 53);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-rows: auto; 
+    grid-template-columns: .1fr .1fr .1fr .2fr;
+    grid-template-rows:.2fr .2fr;
     gap: 10px;
     list-style-type: none;
     padding: 10px;
@@ -11,11 +11,10 @@
 }
 
 .note {
-    background-color: rgb(52, 50, 53);
-    color: gold;
-    outline: 1px solid whitesmoke;
+    color: var(--clr1);
+    outline: 1px solid var(--clr1);
     border-radius: 5px;
-    /* width: 240px; */
+    width: 240px;
     /* height: 100px; */
     display: flex;
     flex-direction: column;
@@ -29,7 +28,7 @@
 }
 
 .note:hover {
-    box-shadow: -2px -2px 6px white;
+    box-shadow: -2px -2px 6px var(--clr1);
     cursor: pointer;
 }
 
@@ -42,8 +41,9 @@
     transition: opacity .3s;
     min-width: 15px;
     min-height: 15px;
-    color: whitesmoke;
+    color: var(--clr1);
     background-color: transparent;
+    border-radius: 2rem;
     border: none;
     padding: 5px;
 }
@@ -54,7 +54,7 @@
 }
 
 .note-editor-btn:hover {
-    box-shadow: -2px -2px 6px rgb(100, 99, 99);
+    background-color: var(--clr3);
 }
 
 .note .note-video iframe{
@@ -67,13 +67,14 @@
 
 .note-color-selector{
     position: absolute;
-    border: 1px black solid;
-    background-color: thistle;
+    border: 1px solid var(--clr2);
+    border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
     display: flex;
     flex-wrap: wrap;
     margin-block-start: 25px;
+    background-color: var(--clr4);
 }
 
 .note-color{
@@ -81,9 +82,10 @@
     height: 25px;
     border-radius: 50%;
     color: transparent;
+    outline: 1px solid var(--clr1);
 
 }
 .note-color:hover{
     cursor: pointer;
-    border: black 1px solid;
+    outline: 2px solid var(--clr3)
 }

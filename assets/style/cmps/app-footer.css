@@ -1,6 +1,5 @@
 .app-footer {
-    
-    background-color: black;
+    background-color: var(--clr5);
     min-height: 10vh;
     bottom: 0;
     width: 100%;

@@ -1,8 +1,12 @@
 button {
     cursor: pointer;
-    color: var(--clr5);
+    color: var(--clr4);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
 }
 
 input {
     padding: 1em;
+    color: var(--clr3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

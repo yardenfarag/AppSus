@@ -3,7 +3,7 @@
     margin: auto;
     border: none;
     border-radius: 2rem;
-    max-width: 500px;
+    max-width: 600px;
     padding: 10px;
 }
 
@@ -11,8 +11,8 @@
     border-radius: 2rem;
     padding-left: 10px;
     border: none;
-    width: 220px;
-    height: 50px;
+    height: 40px;
+    width: 300px;
     margin: 5px;
 }
 
@@ -31,11 +31,11 @@
 .note-types button {
     border: none;
     background-color: transparent;
-    color: whitesmoke;
+    color: var(--clr1);
     padding: 10px;
     border-radius: 2rem;
     font-size: 1.7rem;
 }
 .note-types button:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--clr2);
 }

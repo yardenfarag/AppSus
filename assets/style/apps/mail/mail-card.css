@@ -1,6 +1,6 @@
 .mail-card{
     max-height: 4rem; 
-    border-bottom:1px solid black ;
+    border-bottom:1px solid var(--clr5) ;
 
 }
 .mail-card-content{
@@ -13,5 +13,5 @@
 }
 
 .readClassRed{
-    color: red;
+    color: var(--secondary-clr2);
 }

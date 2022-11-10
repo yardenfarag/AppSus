@@ -2,7 +2,8 @@
     position: absolute;
     top: 10vh;
     bottom: 10vh;
-    background-color: rgb(58, 58, 58);
+    background-color: var(--clr4);
+    /* background-color: rgb(58, 58, 58); */
     right: 10vh;
     left: 10vh;
 }

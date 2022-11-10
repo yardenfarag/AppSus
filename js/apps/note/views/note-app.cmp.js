@@ -12,9 +12,12 @@ export default {
             <note-add @save="addNote"/>
             <note-filter @filter="filter"/>
             <div className="pin-title">
-                <p>Pinned</p>
+                <p><i class="fa-solid fa-thumbtack"></i></p>
             </div>
             <note-list v-if="pinnedNotes" :notes="pinnedNotesForShow" @changeStyle="changeNoteColor" @pin="pinNote" @remove="removeNote"/>
+            <div className="pin-title-bottom">
+                <p><i class="fa-solid fa-thumbtack"></i></p>
+            </div>
             <note-list v-if="notes" :notes="notesForShow" @changeStyle="changeNoteColor" @pin="pinNote" @remove="removeNote"/>
         </section>
     `,
@@ -32,6 +35,7 @@ export default {
             })
         },
         updateNote(note) {
+            console.log(this.notes)
             noteService.save(note)
             .then(note => {
                 console.log(note)

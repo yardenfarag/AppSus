@@ -1,6 +1,5 @@
 .app-header {
   background-color: var(--clr5);
-  color: var(--secondary-clr1);
   padding: 1em;
   display: flex;
   justify-content: space-between;

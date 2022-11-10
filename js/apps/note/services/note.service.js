@@ -94,8 +94,8 @@ function _createNotes() {
                 info: { 
                     txt: "Get my stuff together", 
                     todos: [ 
-                    { txt: "Driving liscence", doneAt: null }, 
-                    { txt: "Coding power", doneAt: 187111111 }, 
+                    { txt: "Driving liscence"}, 
+                    { txt: "Coding power"}, 
                 ] }, 
                 style: { backgroundColor: "transparent" }, 
             },

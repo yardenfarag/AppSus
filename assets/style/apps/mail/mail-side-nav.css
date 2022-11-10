@@ -1,10 +1,10 @@
 .mail-side-nav{
-    background-color: black;
+    background-color: var(--clr5);
     height: 80vh;
     width: 25%;
     padding: 1rem;
-    color: white;
-    
+    color: var(--clr1);
+    border-block: 1px solid var(--clr4);
 }
 
 .side-nav-list{
@@ -25,9 +25,13 @@
 }
 
 .add-mail-btn{
-    background-color: var(--clr2);
+    /* background-color: var(--clr2); */
     border: none;
     border-radius: 1rem;
     padding: 1rem;
     
+}
+
+.add-mail-btn:hover {
+    background-color: var(--clr2);
 }
