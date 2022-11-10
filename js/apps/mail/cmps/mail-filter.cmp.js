@@ -1,3 +1,5 @@
+import { eventBus } from "../../../general/services/event-bus.service.js"
+
 export default {
     name: 'mail-filter',
 
@@ -11,7 +13,7 @@ export default {
             <button @click="filterBy.isRead = !filterBy.isRead;filter();" class="mail-filter-read-btn">read</button>
             <button @click="filterBy.isStar = !filterBy.isStar;filter();" class="mail-filter-read-btn">Star</button>
 
-            <button>refresh</button>
+            <button @click="refresh">refresh</button>
             <button>prev-nav</button>
             <button>next-nav</button>
         </section>
@@ -29,7 +31,18 @@ export default {
     },
     methods : {
         filter(){
+            console.log(this.filterBy)
             this.$emit('mailFilter', this.filterBy)
+        },
+        type(type){
+            this.filterBy.type = type
+            this.$emit('mailFilter', this.filterBy)
+        },
+        refresh(){
+            location.reload()
         }
+    },
+    created(){
+        eventBus.on('filterType', this.type)
     },
 }

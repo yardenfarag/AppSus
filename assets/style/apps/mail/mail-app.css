@@ -1,8 +1,9 @@
 @import '/assets/style/apps/mail/mail-card.css';
 @import '/assets/style/apps/mail/mail-add.css';
+@import '/assets/style/apps/mail/mail-side-nav.css';
 
 .mail-app{
-    background-color: rgb(173, 173, 173);
+    background-color: inherit;
     min-height: 80vh;
 }
 
@@ -12,19 +13,13 @@
 }
 
 .mail-filter{
-    background-color: bisque;
+    
    
 }
 
 .mail-main-list{
-    background-color: aquamarine;
     height: 80vh;
     width: 75%;
     
 }
 
-.mail-side-nav{
-    background-color: azure;
-    height: 80vh;
-    width: 25%;
-}
