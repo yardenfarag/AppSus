@@ -3,7 +3,7 @@
     margin: auto;
     border: none;
     border-radius: 2rem;
-    max-width: 600px;
+    max-width: 500px;
     padding: 10px;
 }
 
@@ -11,8 +11,17 @@
     border-radius: 2rem;
     padding-left: 10px;
     border: none;
-    flex-grow: 1;
+    width: 220px;
+    height: 50px;
+    margin: 5px;
+}
 
+.inputs input.secondary  {
+    display:none;
+}
+
+.show {
+    display:block;
 }
 
 .note-add .note-save-btn {

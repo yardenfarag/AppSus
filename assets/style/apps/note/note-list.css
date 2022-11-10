@@ -25,20 +25,21 @@
 .note-editor {
     display: flex;
     justify-content: space-evenly;
-    opacity: 0;
-    transition: opacity .3s;
     order:2;
 }
 
 .note:hover {
     box-shadow: -2px -2px 6px white;
+    cursor: pointer;
 }
 
-.note:hover .note-editor {
+.note:hover .note-editor-btn {
     opacity:1;
 }
 
 .note-editor .note-editor-btn {
+    opacity: 0;
+    transition: opacity .3s;
     min-width: 15px;
     min-height: 15px;
     color: whitesmoke;

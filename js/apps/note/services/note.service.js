@@ -29,10 +29,11 @@ function remove(noteId) {
 }
 
 function save(note) {
-    note.id = utilService.makeId()
-    const notes = query()
-    utilService.saveToStorage(NOTE_KEY, notes)
-    return note
+    if(note.id){
+        return storageService.put(NOTE_KEY, note)
+    } else {
+        return storageService.post(NOTE_KEY, note)
+    }
 }
 
 function updateNote(note) {

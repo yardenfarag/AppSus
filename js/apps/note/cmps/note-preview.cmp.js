@@ -9,7 +9,7 @@ export default {
     props: ['note'],
     template: `
         <section class="note-preview">
-            <div :style="{backgroundColor: note.style.backgroundColor}" class="note">
+            <div @click="toggleEditModal" :style="{backgroundColor: note.style.backgroundColor}" class="note">
                 <div className="note-editor">
                     <div className="pinning">
                         <button @click="pinNote(note.id)" class="note-editor-btn"><i class="fa-solid fa-thumbtack"></i></button>
@@ -19,10 +19,12 @@ export default {
                         <span @click="changeStyle(note.id, color)" class="note-color" v-for="color in colors" :style="{ 'background-color': color }">Co</span>
                     </div>
                     <button @click="shareToMail(note.id)" class="note-editor-btn"><i class="fa-solid fa-envelope"></i></button>
-                    <button @click="toggleEditModal" class="note-editor-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <div v-if="noteSelected">
-                        <note-edit :note="note"/>
-                    </div>
+                    <router-link :to="'/note/' + note.id">
+                        <button @click="toggleEditModal" class="note-editor-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                    </router-link>
+                        <div v-if="noteSelected">
+                            <note-edit @closeModal="toggleEditModal" :note="note"/>
+                        </div>
                     <button @click="removeNote(note.id)" class="note-editor-btn"><i class="fa-solid fa-trash"></i></button>
                 </div>
                 <component  

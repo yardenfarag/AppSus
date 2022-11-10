@@ -1,5 +1,4 @@
-import { noteService } from '../services/note.service.js'
-
+import { eventBus } from '../../../general/services/event-bus.service.js'
 
 import noteTxtEdit from '../cmps/note-txt-edit.cmp.js'
 import noteImgEdit from '../cmps/note-img-edit.cmp.js'
@@ -12,27 +11,33 @@ export default {
     template: `
         <section class="note-edit-modal">
         <div :style="{backgroundColor: note.style.backgroundColor}" class="note">
-                <form @submit.prevent="save">
+                <form @submit.stop.prevent="saveNote">
                     <input type="text" v-model="noteToEdit.info.txt" />
-                    <button>Save</button>
+                    <input v-if="noteToEdit.info.imgUrl" type="text" v-model="noteToEdit.info.imgUrl" />
+                    <input v-if="noteToEdit.info.vidUrl" type="text" v-model="noteToEdit.info.vidUrl" />
+                    <input v-if="noteToEdit.info.todos" type="text" v-model="noteToEdit.info.todos" />
+                    <router-link to="/note">
+                        <button @click="toggleNoteEdit();saveNote(noteToEdit)" >Save</button>
+                    </router-link>
                 </form>
             </div>
         </section>
     `,
     data() {
         return {
-            noteToEdit: noteService.getEmptyNote(),
+            noteToEdit: this.note,
             colorBtnSelected: false,
             colors: ['transparent', '#49caae','#3296e1','#9957bb', '#344860', '#54be76', '#f1c500', '#eb705e', '#c13a24', '#ebeff0'],
         }
     },
       methods: {
-        save() {
-            console.log('savig...');
+        saveNote(note) {
+            eventBus.emit('saveNote', note)
+            this.$router.push('/note/')
         },
         toggleNoteEdit() {
-            this.noteSelected = !this.noteSelected
-            console.log(this.noteSelected);
+            this.$emit('closeModal')
+            this.$router.push('/note/')
         },
         toggleColorBtn() {
             this.colorBtnSelected = !this.colorBtnSelected

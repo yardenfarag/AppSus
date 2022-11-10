@@ -26,30 +26,33 @@ export default {
         }
     },
     methods: {
-        filter(filterBy) {
+        filter(ev) {
             eventBus.on('filter', payload => {
                 this.filterBy = payload
             })
-            console.log(this.filterBy);
         },
-        addNote(newNote) {
-            console.log('lalala');
-            console.log(newNote)
-            // noteService.save(note)
-            // .then(note => {
-            //     console.log(note)
-            //     this.notes.unshift(note)
-            // })
+        updateNote(note) {
+            noteService.save(note)
+            .then(note => {
+                console.log(note)
+            })
+        },
+        addNote(note) {
+            noteService.save(note)
+            .then(note => {
+                this.notes.unshift(note)
+                showSuccessMsg('Note Added Successfully!')
+            })
+            .catch(() => showErrorMsg('Something Went Wrong...'))
         },
         removeNote(noteId) {
-            console.log(noteId)
             noteService.remove(noteId)
             .then(() => {
                 const idx = this.notes.findIndex(note => note.id === noteId)
                 this.notes.splice(idx, 1)
                 showSuccessMsg('Note Removed Successfully!')
             })
-            .catch(() => showErrorMsg('Something Went Wrong'))
+            .catch(() => showErrorMsg('Something Went Wrong...'))
         },
         pinNote(noteId) {
            noteService.get(noteId)
@@ -59,7 +62,6 @@ export default {
             .then(() => {
                  noteService.query()
                  .then(notes => {
-                 console.log(notes) 
                  this.notes = notes.filter(note => !note.isPinned)
                 })
             })
@@ -74,7 +76,6 @@ export default {
             .then(() => {
                  noteService.query()
                  .then(notes => {
-                 console.log(notes) 
                  this.notes = notes.filter(note => !note.isPinned)
                 })
             })
@@ -93,7 +94,9 @@ export default {
 
             noteService.query()
                  .then(notes => {
-                    let pinnedNotesForDisplay = notes.filter(note => note.isPinned)
+                    const regex = new RegExp(this.filterBy.txt, 'i')
+                    let pinnedNotesForDisplay = notes.filter(note => note.isPinned &&
+                        regex.test(note.info.txt))
                     this.pinnedNotes = pinnedNotesForDisplay
                  })
 
@@ -106,6 +109,10 @@ export default {
             this.pinnedNotes = notes.filter(note => note.isPinned)
             this.notes = notes.filter(note => !note.isPinned)
         })
+        eventBus.on('filter', payload => {
+            this.filterBy = payload
+        })
+        eventBus.on('saveNote', payload => {this.updateNote(payload)})
     },
     components: {
         noteList,
