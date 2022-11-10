@@ -3,7 +3,7 @@ import { eventBus } from '../../../general/services/event-bus.service.js'
 
 import mailList from '../cmps/mail-list.cmp.js'
 import mailSideNav from '../cmps/mail-side-nav.cmp.js'
-import { mailsData } from '../data/demo-data.js'
+
 
 
 export default {

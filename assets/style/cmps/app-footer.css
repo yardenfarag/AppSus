@@ -1,6 +1,7 @@
 .app-footer {
-    position: absolute;
+    
     background-color: black;
+    min-height: 10vh;
     bottom: 0;
     width: 100%;
 }

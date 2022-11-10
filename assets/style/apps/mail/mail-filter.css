@@ -1,0 +1,16 @@
+.mail-filter{
+    justify-content: space-between;
+}
+
+.mail-filter input{
+    border-radius: 1rem;
+    flex-grow: 2;
+}
+
+
+.mail-filter button{
+    border: none;
+    color: var(--clr2);
+    background-color: inherit;
+    font-size: 1.2rem;
+}

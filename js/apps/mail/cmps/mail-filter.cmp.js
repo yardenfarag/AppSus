@@ -4,18 +4,19 @@ export default {
     name: 'mail-filter',
 
     template: `
-        <section class="mail-filter">
+        <section class="mail-filter flex">
 
             <input type="search" 
                    v-model="filterBy.subject"
-                   @input="filter"  />
+                   @input="filter"
+                   placeholder="🔍search"  />
 
-            <button @click="filterBy.isRead = !filterBy.isRead;filter();" class="mail-filter-read-btn">read</button>
-            <button @click="filterBy.isStar = !filterBy.isStar;filter();" class="mail-filter-read-btn">Star</button>
+            <button @click="filterBy.isRead = !filterBy.isRead;filter();" class="mail-filter-read-btn"><i class="fa-regular fa-envelope"></i></button>
+            <button @click="filterBy.isStar = !filterBy.isStar;filter();" class="mail-filter-read-btn"><i class="fa-regular fa-star"></i></button>
 
-            <button @click="refresh">refresh</button>
-            <button>prev-nav</button>
-            <button>next-nav</button>
+            <button @click="refresh"><i class="fa-solid fa-arrows-rotate"></i></button>
+            <button><i class="fa-solid fa-caret-left"></i></button>
+            <button><i class="fa-solid fa-caret-right"></i></button>
         </section>
     `,
     data() {
