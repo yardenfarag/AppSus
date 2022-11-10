@@ -2,8 +2,23 @@
     position: absolute;
     top: 10vh;
     bottom: 10vh;
-    background-color: var(--clr4);
-    /* background-color: rgb(58, 58, 58); */
+    background-color: var(--clr1);
     right: 10vh;
     left: 10vh;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.mail-form{
+    margin-top: 2.2rem;
+    flex-direction: column;
+}
+
+.mail-input{
+    border: none;
+    border-bottom: solid 1px var(--clr3);
+}
+.mail-input-body{
+    border: none;
+    border-bottom: solid 1px var(--clr3);
 }

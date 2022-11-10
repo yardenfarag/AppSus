@@ -22,12 +22,13 @@ function get(mailId){
     return storageService.get(MAILS_KEY, mailId)
 }
 
-function getEmptyMail(subject='', body = 0, to='') {
+function getEmptyMail(subject='', body = '', to='') {
     const isRead = false
     const from = ''
     const type = 'draft'
     const isStar = false
-    return { id: '', subject, body, to, isRead, from, type, isStar}
+    const sentAt = new Date(Date.now()).toDateString().slice(4, 10)
+    return { id: '', subject, body, to, isRead, from, type, isStar, sentAt}
 }
 
 function save(mail){

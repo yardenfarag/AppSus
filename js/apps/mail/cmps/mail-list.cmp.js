@@ -11,22 +11,25 @@ export default {
     props: ['mailsData'],
     template: `
 
+
     <mail-add v-if="showAdd" />
     <mail-details @details="openDetails" v-if="showDetails" :mail="detailsOfMail"/>
 
+        <!-- <div class="list-bg"> -->
+            <section v-if="showList" class="mail-main-list">
+            <mail-filter @mailFilter="setFilter"/>
+    
+                <article class="mail-card"
+                        
+                        v-for="mail in mailsToShow" 
+                        :key="mail.id">
+                
+                        <mail-preview @details="openDetails" :mail="mail"/>
+                        
+                    </article>
+                </section>
 
-        <section v-if="showList" class="mail-main-list">
-        <mail-filter @mailFilter="setFilter"/>
-
-            <article class="mail-card"
-                    
-                    v-for="mail in mailsToShow" 
-                    :key="mail.id">
-            
-                    <mail-preview @details="openDetails" :mail="mail"/>
-                    
-                </article>
-            </section>
+        <!-- </div> -->
             
 
     `,
@@ -43,8 +46,8 @@ export default {
                 isRead: false,
                 isStar: false,
             },
-            
-                
+
+
         }
     },
     computed: {
@@ -65,7 +68,7 @@ export default {
 
             return mails
         },
-  
+
     },
     methods: {
         setFilter(filterParams) {

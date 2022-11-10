@@ -2,25 +2,19 @@
 @import '/assets/style/apps/mail/mail-add.css';
 @import '/assets/style/apps/mail/mail-side-nav.css';
 @import '/assets/style/apps/mail/mail-filter.css';
+@import '/assets/style/apps/mail/mail-details.css';
+@import '/assets/style/apps/mail/mail-list.css';
 
 .mail-app{
     background-color: inherit;
     min-height: 80vh;
+    background-color: var(--clr5);
 }
 
 .mail-main-container{
-    height: 100%;
-    
+    height: 100%;   
 }
 
-.mail-filter{
-    
-   
-}
 
-.mail-main-list{
-    height: 80vh;
-    width: 75%;
-    
-}
+
 

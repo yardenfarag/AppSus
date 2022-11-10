@@ -11,7 +11,7 @@ export default {
 
         <ul class="clean-list side-nav-list">
             <li class="mail-side-nav-category flex" @click="inbox"> <i class="fa-solid fa-inbox"></i>Inbox <span>{{ inboxCalc }}</span></li>
-            <li class="mail-side-nav-category flex" @click="star"><i class="fa-solid fa-star"></i>Star <span>{{ starCalc }}</span></li>
+            <!-- <li class="mail-side-nav-category flex" @click="star"><i class="fa-solid fa-star"></i>Star <span>{{ starCalc }}</span></li> -->
             <li class="mail-side-nav-category flex" @click="sent"><i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i>Sent <span>{{ sentCalc }}</span></li>
             <li class="mail-side-nav-category flex" @click="draft"><i class="fa-regular fa-file"></i>Drafts <span>{{ draftCalc }}</span></li>
             <li class="mail-side-nav-category flex" @click="trash"><i class="fa-solid fa-trash-can"></i>Trash <span>{{ trashCalc }}</span></li>
@@ -77,5 +77,8 @@ export default {
         trash(){
             eventBus.emit('filterType', 'trash')
         },
+        // star(){
+        //     eventBus.emit('filterType', 'trash')
+        // },
     },
 }

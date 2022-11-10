@@ -1,0 +1,11 @@
+.mail-main-list{
+    height: 80vh;
+    width: 75%;
+    overflow-y: scroll;
+    border-radius: 1rem;
+    background-color: var(--clr4);
+}
+
+.list-bg{
+    width: 100%;
+}

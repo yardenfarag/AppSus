@@ -1,17 +1,55 @@
-.mail-card{
-    max-height: 4rem; 
-    border-bottom:1px solid var(--clr5) ;
-
+.main-mail-preview{
+    overflow: hidden;
+    max-height: 40px;
+    justify-content: space-between;
 }
+
+.mail-preview{
+    justify-content: space-between;
+    color: var(--clr2);
+    text-align: left;
+    gap: 2rem;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+
 .mail-card-content{
-    flex-direction: column;
-
+    cursor: pointer;
+    align-items: center;
+    justify-content: center ;
+    gap: 2rem;
+    max-height: 40px;
+    padding: 10px;
+    
 }
+
+.mail-body-prev{
+    max-width: 600px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-grow: -10;
+}
+
 .mail-card-content:hover{
     cursor: pointer;
-
 }
 
-.readClassRed{
-    color: var(--secondary-clr2);
+.mail-subject{
+    flex-grow: 2;
 }
+
+.mail-date{
+    align-items: center;
+    
+}
+
+.card-button{
+border: none;
+color: var(--clr2);
+background-color: inherit;
+font-size: 1.2rem;
+}
+
