@@ -188,6 +188,20 @@ function _createNotes() {
                 info: { imgUrl: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8YnJhbmRpbmd8ZW58MHx8MHx8&w=1000&q=80', txt: "" }, 
                 style: { backgroundColor: "#3296e1" }, 
             },
+            { 
+                id: "n118", 
+                type: "note-txt", 
+                isPinned: false, 
+                info: { txt: 'Programming is a lot of fun. It\'s a great way to learn new things and to challenge yourself. There\'s a sense of satisfaction that comes from solving problems and creating something new.It\'s also a lot of work. But it\'s worth it. If you\'re looking for a challenge, something new to learn, and a way to use your creativity, programming is the perfect activity for you.' },
+                style: { backgroundColor: "#344860" }, 
+            },
+            {
+                id: "n119",
+                type: "note-audio",
+                isPinned: true,
+                info: { txt: 'my first audio note', audUrl:'https://soundcloud.com/fvckgenres/lny-tnz-like-heaven-ft-erich-lennig-extended-mix?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing'},
+                style: { backgroundColor: "#eb705e" },
+            }
         ]
         utilService.saveToStorage(NOTE_KEY, notes)
     }

@@ -3,6 +3,7 @@ import noteImg from '../cmps/note-img.cmp.js'
 import noteVideo from '../cmps/note-video.cmp.js'
 import noteTodos from '../cmps/note-todos.cmp.js'
 import noteEdit from './note-edit.cmp.js'
+import noteAudio from './note-audio.cmp.js'
 
 export default {
     name: 'note-preview',
@@ -78,5 +79,6 @@ export default {
         noteVideo,
         noteTodos,
         noteEdit,
+        noteAudio,
     }
 }
