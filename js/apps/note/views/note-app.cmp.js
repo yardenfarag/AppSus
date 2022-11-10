@@ -14,11 +14,11 @@ export default {
             <div className="pin-title">
                 <p><i class="fa-solid fa-thumbtack"></i></p>
             </div>
-            <note-list v-if="pinnedNotes" :notes="pinnedNotesForShow" @changeStyle="changeNoteColor" @pin="pinNote" @remove="removeNote"/>
+            <note-list v-if="pinnedNotes" :notes="pinnedNotesForShow" @duplicate="duplicateNote" @changeStyle="changeNoteColor" @pin="pinNote" @remove="removeNote"/>
             <div className="pin-title-bottom">
                 <p><i class="fa-solid fa-thumbtack"></i></p>
             </div>
-            <note-list v-if="notes" :notes="notesForShow" @changeStyle="changeNoteColor" @pin="pinNote" @remove="removeNote"/>
+            <note-list v-if="notes" :notes="notesForShow" @duplicate="duplicateNote" @changeStyle="changeNoteColor" @pin="pinNote" @remove="removeNote"/>
         </section>
     `,
     data() {
@@ -29,6 +29,28 @@ export default {
         }
     },
     methods: {
+        duplicateNote(noteId) {
+            let duplicate = noteService.getEmptyNote()
+            noteService.get(noteId)
+            .then(note => {
+                duplicate.type = note.type
+                duplicate.isPinned = note.isPinned
+                duplicate.info.txt = note.info.txt
+                duplicate.info.imgUrl = note.info.imgUrl
+                duplicate.info.vidUrl = note.info.vidUrl
+                duplicate.info.todos = note.info.todos
+                duplicate.style.backgroundColor = note.style.backgroundColor
+                
+            })
+            noteService.save(duplicate)
+            .then(note => {
+                const idx = this.notes.findIndex(note => note.id === noteId)
+                this.notes.splice(idx, 0, note)
+                showSuccessMsg('Note Added Successfully!')
+            })
+            .catch(() => showErrorMsg('Something Went Wrong...'))
+            
+        },
         filter(ev) {
             eventBus.on('filter', payload => {
                 this.filterBy = payload
@@ -91,7 +113,8 @@ export default {
             if (!this.notes) return
             const regex = new RegExp(this.filterBy.txt, 'i')
             return this.notes.filter(note => !note.isPinned &&
-                regex.test(note.info.txt))
+                regex.test(note.info.txt) &&
+                regex.test(note.type))
         },
         pinnedNotesForShow() {
             if (!this.pinnedNotes) return
@@ -100,7 +123,8 @@ export default {
                  .then(notes => {
                     const regex = new RegExp(this.filterBy.txt, 'i')
                     let pinnedNotesForDisplay = notes.filter(note => note.isPinned &&
-                        regex.test(note.info.txt))
+                        regex.test(note.info.txt) &&
+                        regex.test(note.type))
                     this.pinnedNotes = pinnedNotesForDisplay
                  })
 

@@ -12,20 +12,21 @@ export default {
             <div :style="{backgroundColor: note.style.backgroundColor}" class="note">
                 <div className="note-editor">
                     <div className="pinning">
-                        <button @click="pinNote(note.id)" class="note-editor-btn"><i class="fa-solid fa-thumbtack"></i></button>
+                        <button @click="pinNote(note.id)" class="note-editor-btn" title="Pin"><i class="fa-solid fa-thumbtack"></i></button>
                     </div>
-                    <button @click="toggleColorBtn()" class="note-editor-btn"><i class="fa-solid fa-palette"></i></button>
+                    <button @click="toggleColorBtn()" class="note-editor-btn" title="Change Color"><i class="fa-solid fa-palette"></i></button>
                     <div v-if="colorBtnSelected" class="note-color-selector">
                         <span @click="changeStyle(note.id, color)" class="note-color" v-for="color in colors" :style="{ 'background-color': color }">Co</span>
                     </div>
-                    <button @click="shareToMail(note.id)" class="note-editor-btn"><i class="fa-solid fa-envelope"></i></button>
+                    <button @click="duplicate(note.id)" class="note-editor-btn" title="Duplicate"><i class="fa-solid fa-copy"></i></button>
+                    <button @click="shareToMail(note.id)" class="note-editor-btn" title="Send via mail"><i class="fa-solid fa-envelope"></i></button>
                     <router-link :to="'/note/' + note.id">
-                        <button @click="toggleEditModal" class="note-editor-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button @click="toggleEditModal" class="note-editor-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
                     </router-link>
                         <div v-if="noteSelected">
                             <note-edit @closeModal="toggleEditModal" :note="note"/>
                         </div>
-                    <button @click="removeNote(note.id)" class="note-editor-btn"><i class="fa-solid fa-trash"></i></button>
+                    <button @click="removeNote(note.id)" class="note-editor-btn" title="Remove"><i class="fa-solid fa-trash"></i></button>
                 </div>
                 <component  @click.stop="toggleEditModal" 
                     :is="note.type" 
@@ -38,16 +39,20 @@ export default {
         return {
             noteSelected: false,
             colorBtnSelected: false,
-            colors: ['transparent', '#49caae','#3296e1','#9957bb', '#344860', '#54be76', '#f1c500', '#eb705e', '#c13a24', '#ebeff0'],
+            colors: ['rgb(52, 50, 53)', '#49caae','#3296e1','#9957bb', '#344860', '#54be76', '#f1c500', '#eb705e', '#c13a24', '#ebeff0'],
         }
     },
     methods: {
         toggleEditModal() {
             this.noteSelected = !this.noteSelected
+            if (this.noteSelected === true) {
+                this.$router.push('/note/' + this.note.id)
+            }
+            else this.$router.push('/note/')
         },
-        // closeEditModal() {
-        //     this.noteSelected = false
-        // },
+        duplicate(noteId) {
+            this.$parent.$emit('duplicate', noteId)
+        },
         toggleColorBtn() {
             this.colorBtnSelected = !this.colorBtnSelected
         },

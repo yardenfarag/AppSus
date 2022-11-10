@@ -9,7 +9,7 @@ html {
 body {
   margin: 0;
   color: var(--clr4);
-  background-color: rgb(52, 50, 53);
+  background-color: var(--clr4);
 }
 
 h1,
@@ -53,4 +53,3 @@ button {
 .debug * {
   outline: 1px solid gold
 }
-

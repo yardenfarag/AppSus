@@ -46,7 +46,7 @@ function getEmptyNote() {
         type: 'note-txt', 
         isPinned: false,
         info: {txt: ''},
-        style: { backgroundColor: "transparent" },
+        style: { backgroundColor: "rgb(52, 50, 53)" },
     }
 }
 
@@ -78,14 +78,14 @@ function _createNotes() {
                 type: "note-txt", 
                 isPinned: true, 
                 info: { txt: "Fullstack Me Baby!" },
-                style: { backgroundColor: "transparent" }, 
+                style: { backgroundColor: "#3296e1" }, 
             }, 
             { 
                 id: "n102", 
                 type: "note-img", 
                 info: { imgUrl:'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80', 
                         txt: "WOW" }, 
-                style: { backgroundColor: "transparent" }, 
+                style: { backgroundColor: "#eb705e" }, 
             }, 
             { 
                 id: "n103", 
@@ -93,18 +93,47 @@ function _createNotes() {
                 isPinned: false,
                 info: { 
                     txt: "Get my stuff together", 
-                    todos: [ 
-                    { txt: "Driving liscence"}, 
-                    { txt: "Coding power"}, 
-                ] }, 
-                style: { backgroundColor: "transparent" }, 
+                    todos: ['Driving liscence','Coding power']
+                    },
+                style: { backgroundColor: "#c13a24" }, 
             },
             { 
                 id: "n104", 
                 type: "note-video", 
                 isPinned: false,
                 info: { vidUrl: 'https://www.youtube.com/embed/wtG6I5wgHuA', txt: "OMG" }, 
-                style: { backgroundColor: "transparent" }, 
+                style: { backgroundColor: "#344860" }, 
+            },
+            { 
+                id: "n105", 
+                type: "note-img", 
+                isPinned: false,
+                info: { imgUrl: 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', txt: "Puppies!" }, 
+                style: { backgroundColor: "#49caae" }, 
+            },
+            { 
+                id: "n106", 
+                type: "note-txt", 
+                isPinned: true, 
+                info: { txt: "I am a note!" },
+                style: { backgroundColor: "#9957bb" }, 
+            },
+            { 
+                id: "n107", 
+                type: "note-txt", 
+                isPinned: false, 
+                info: { txt: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam assumenda odit eaque ipsam doloremque eveniet eum officiis ipsum! Adipisci libero temporibus nam expedita non nobis fuga deserunt dolor minima in.' },
+                style: { backgroundColor: "#344860" }, 
+            },
+            { 
+                id: "n108", 
+                type: "note-todos", 
+                isPinned: false,
+                info: { 
+                    txt: "Groceries", 
+                    todos: ['Milk', 'Cheese', 'Bread', 'Bananas', 'Drinks', 'Snacks', 'Fruit', 'Cereal'] 
+                }, 
+                style: { backgroundColor: "#c13a24" }, 
             },
         ]
         utilService.saveToStorage(NOTE_KEY, notes)
