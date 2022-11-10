@@ -73,13 +73,7 @@ function _createNotes() {
     let notes = utilService.loadFromStorage(NOTE_KEY)
     if (!notes || !notes.length) {
         notes = [
-            { 
-                id: "n101", 
-                type: "note-txt", 
-                isPinned: true, 
-                info: { txt: "Fullstack Me Baby!" },
-                style: { backgroundColor: "#3296e1" }, 
-            }, 
+ 
             { 
                 id: "n102", 
                 type: "note-img", 
@@ -88,20 +82,10 @@ function _createNotes() {
                 style: { backgroundColor: "#eb705e" }, 
             }, 
             { 
-                id: "n103", 
-                type: "note-todos", 
-                isPinned: false,
-                info: { 
-                    txt: "Get my stuff together", 
-                    todos: ['Driving liscence','Coding power']
-                    },
-                style: { backgroundColor: "#c13a24" }, 
-            },
-            { 
                 id: "n104", 
                 type: "note-video", 
                 isPinned: false,
-                info: { vidUrl: 'https://www.youtube.com/embed/wtG6I5wgHuA', txt: "OMG" }, 
+                info: { vidUrl: 'https://www.youtube.com/embed/wtG6I5wgHuA', txt: "" }, 
                 style: { backgroundColor: "#344860" }, 
             },
             { 
@@ -115,14 +99,14 @@ function _createNotes() {
                 id: "n106", 
                 type: "note-txt", 
                 isPinned: true, 
-                info: { txt: "I am a note!" },
+                info: { txt: "My First Note!" },
                 style: { backgroundColor: "#9957bb" }, 
             },
             { 
                 id: "n107", 
                 type: "note-txt", 
-                isPinned: false, 
-                info: { txt: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam assumenda odit eaque ipsam doloremque eveniet eum officiis ipsum! Adipisci libero temporibus nam expedita non nobis fuga deserunt dolor minima in.' },
+                isPinned: true, 
+                info: { txt: 'There are a few reasons why winter is the best season. For one, the weather is usually pretty good. It\'s not too hot and not too cold, and there\'s often a nice breeze. Additionally, winter is a great time to be indoors. You can curl up with a blanket and a good book, or watch a movie. And, of course, winter is the time for holidays!' },
                 style: { backgroundColor: "#344860" }, 
             },
             { 
@@ -134,6 +118,75 @@ function _createNotes() {
                     todos: ['Milk', 'Cheese', 'Bread', 'Bananas', 'Drinks', 'Snacks', 'Fruit', 'Cereal'] 
                 }, 
                 style: { backgroundColor: "#c13a24" }, 
+            },
+            { 
+                id: "n109", 
+                type: "note-txt", 
+                isPinned: false, 
+                info: { txt: 'I really like food. It is one of my favorite things. I love to eat and I love to cook. I am always trying new recipes and experimenting with new ingredients. I am always on the lookout for new and interesting foods to try. I love to eat out, but I also love to cook at home. I am always trying to find new and interesting ways to prepare food.' },
+                style: { backgroundColor: "#3296e1" }, 
+            },
+            { 
+                id: "n110", 
+                type: "note-img", 
+                isPinned: false,
+                info: { imgUrl: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWVtZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60', txt: "" }, 
+                style: { backgroundColor: "#344860" }, 
+            },
+            { 
+                id: "n111", 
+                type: "note-video", 
+                isPinned: true,
+                info: { vidUrl: 'https://www.youtube.com/embed/7EENeP-wFgU', txt: "Study Music" }, 
+                style: { backgroundColor: "#eb705e" }, 
+            },
+            { 
+                id: "n112", 
+                type: "note-img", 
+                isPinned: false,
+                info: { imgUrl: 'https://vuejs.org/images/logo.png', txt: "I 🤍 VUE" }, 
+                style: { backgroundColor: "#49caae" }, 
+            },
+            { 
+                id: "n113", 
+                type: "note-todos", 
+                isPinned: true,
+                info: { 
+                    txt: "To Dos", 
+                    todos: ['Go to the Bank', 'Get Mail', 'Get Groceries', 'Call Mom'] 
+                }, 
+                style: { backgroundColor: "#9957bb" }, 
+            },
+            { 
+                id: "n114", 
+                type: "note-txt", 
+                isPinned: false, 
+                info: { txt: 'I\'m a cat lover, and I have two cats of my own. I\'m also a big fan of all things cat-related, from cat memes to cat videos. In short, if it\'s about cats, I\'m probably into it.' },
+                style: { backgroundColor: "#eb705e" }, 
+            },
+            { 
+                id: "n115", 
+                type: "note-video", 
+                isPinned: false,
+                info: { vidUrl: 'https://www.youtube.com/embed/23RirKg-zfo', txt: "" }, 
+                style: { backgroundColor: "#344860" }, 
+            },
+            { 
+                id: "n116", 
+                type: "note-todos", 
+                isPinned: true,
+                info: { 
+                    txt: "Features to Support", 
+                    todos: ['Note-Canvas', 'Note-Audio', 'Note-Map'] 
+                }, 
+                style: { backgroundColor: "#9957bb" }, 
+            },
+            { 
+                id: "n117", 
+                type: "note-img", 
+                isPinned: true,
+                info: { imgUrl: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8YnJhbmRpbmd8ZW58MHx8MHx8&w=1000&q=80', txt: "" }, 
+                style: { backgroundColor: "#3296e1" }, 
             },
         ]
         utilService.saveToStorage(NOTE_KEY, notes)

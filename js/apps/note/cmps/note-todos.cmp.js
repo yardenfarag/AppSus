@@ -6,10 +6,12 @@ export default {
 
                 <div v-for="todo in info.todos">
                     <label class="checkbox">
-                        <input type="checkbox" value="todo"/> {{todo}}
+                        <input type="checkbox" value="todo"/>
+                        <span>{{todo}}</span>
                     </label>
                 </div>
 
         </section>
     `,
+
 }

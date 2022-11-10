@@ -64,6 +64,7 @@ export default {
             })
         },
         addNote(note) {
+            console.log(this.notes);
             noteService.save(note)
             .then(note => {
                 this.notes.unshift(note)
