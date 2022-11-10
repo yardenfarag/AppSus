@@ -7,7 +7,7 @@ export default {
     template: `
     <section v-if="mailsData" class="mail-side-nav">
 
-    <button class="add-mail-btn" @click="addMail">new mail  <i class="fa-solid fa-pen"></i></button>
+    <button class="add-mail-btn" @click="addMail">New Mail  <i class="fa-solid fa-pen"></i></button>
 
         <ul class="clean-list side-nav-list">
             <li class="mail-side-nav-category flex" @click="inbox"> <i class="fa-solid fa-inbox"></i>Inbox <span>{{ inboxCalc }}</span></li>

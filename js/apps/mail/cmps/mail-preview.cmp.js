@@ -9,19 +9,21 @@ export default {
     <section class="main-mail-preview">
         <section v-on:mouseover="hoverButtensOn" v-on:mouseleave="hoverButtensOff"  class="mail-preview flex">
             <router-link :to="'/mail/' + mail.id">         
-                <section @click="details(mail)" class="mail-card-content flex">
+                <section  class="mail-card-content flex">
                     
+                <button v-if="mail.isStar" class="card-button" @click="star(mail)" :class="starClass"><i class="fa-solid fa-star"></i></button>
+                <button v-if="!mail.isStar" class="card-button" @click="star(mail)" :class="starClass"><i class="fa-regular fa-star"></i></button>
+                    <section class="mail-card-content flex" @click="details(mail)">
+                        <h5>{{ mail.from }}</h5>
 
-                <button class="card-button" @click="star(mail)" :class="starClass"><i class="fa-regular fa-star"></i></button>
-                <h5>{{ mail.from }}</h5>
-                    <h5 class="mail-subject">{{ mail.subject }}</h5>
-                
-                    <div class="mail-body-prev">
-
-                        <p>{{ mail.body }}</p>
-                    </div>
-         
-
+                        <div >
+                            <h4 class="mail-subject">{{ mail.subject }}</h4>
+                        </div>
+                        
+                            <div >
+                                <p class="mail-body-prev">{{ mail.body }}</p>
+                            </div>
+                    </section>
                 </section>    
             </router-link>
             <div class="mail-date flex">
@@ -29,7 +31,9 @@ export default {
                 </div>
                 <section v-if="isHoverd" class="mail-preview-buttens flex">
                     <button class="card-button" @click="remove(mail.id)"><i class="fa-solid fa-trash-can"></i></button>
-                    <button class="card-button" @click="read(mail)" :class="readClass" ><i class="fa-regular fa-envelope"></i></button>
+                    
+                    <button v-if="mail.isRead" class="card-button" @click="read(mail)" :class="readClass" ><i class="fa-regular fa-envelope-open"></i></button>
+                    <button v-if="!mail.isRead" class="card-button" @click="read(mail)" :class="readClass" ><i class="fa-regular fa-envelope"></i></button>
                 </section>
                 
                 <h6 class="mail-date">{{ dateCalc }}</h6>
@@ -38,7 +42,6 @@ export default {
     `,
     data() {
         return {
-            isRed: true,
             isHoverd: false,
         }
     },
