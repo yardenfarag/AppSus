@@ -6,7 +6,7 @@ export default {
     props: ['mail'],
     emits: ['remove', 'details', 'read'],
     template: `
-    <section class="main-mail-preview">
+    <section class="main-mail-preview" :class="mailIsRead">
         <section v-on:mouseover="hoverButtensOn" v-on:mouseleave="hoverButtensOff"  class="mail-preview flex">
             <router-link :to="'/mail/' + mail.id">         
                 <section  class="mail-card-content flex">
@@ -14,10 +14,10 @@ export default {
                 <button v-if="mail.isStar" class="card-button" @click="star(mail)" :class="starClass"><i class="fa-solid fa-star"></i></button>
                 <button v-if="!mail.isStar" class="card-button" @click="star(mail)" :class="starClass"><i class="fa-regular fa-star"></i></button>
                     <section class="mail-card-content flex" @click="details(mail)">
-                        <h5>{{ mail.from }}</h5>
+                        <h5 class="mail-from" :class="mailIsRead">{{ mail.from }}</h5>
 
                         <div >
-                            <h4 class="mail-subject">{{ mail.subject }}</h4>
+                            <h4 class="mail-subject" :class="mailIsRead">{{ mail.subject }}</h4>
                         </div>
                         
                             <div >
@@ -55,6 +55,9 @@ export default {
         dateCalc() {
             return new Date(this.mail.sentAt).toDateString().slice(4, 10)
         },
+        mailIsRead(){
+            if(!this.mail.isRead) return 'mail-unread'
+        },
     },
     methods: {
         hoverButtensOn(){
@@ -65,11 +68,10 @@ export default {
         },
         remove(mailId) {
             this.$parent.$emit('remove', mailId)
-            console.log(mailId)
         },
         details(mail) {
-            console.log(mail)
             this.$emit('details', mail)
+            mail.isRead = true
         },
         read(mail) {
             mail.isRead = !mail.isRead

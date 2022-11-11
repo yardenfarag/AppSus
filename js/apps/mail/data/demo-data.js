@@ -5,7 +5,7 @@ export const mailsData = [
         body: `The first time I ever saw Nico was at one of my daughters soccer games. Her team was about to run onto the field to take on their opponents, 10 to 6 in their favor with an end in sight. My daughter and her teammates screamed and took off. With me running a few steps behind, I saw a large man, bald and ten feet tall, in the back row of the stands, holding my neighbor's four year old waving her toward him. I was amazed.
             The second time was much earlier, one sunny morning, as a baby's rattle cascaded over the benches in the park across the street from our house. With baby Cameron held up to me, I saw his father out and about in the streets of Detroit on a bright, red Vespa, catching the eye of a young woman.
             I never saw Nico again, but he has been in my life in some way every day for the past 35 years. `,
-        isRead: true,
+        isRead: false,
         sentAt: 1551133930594,
         from: 'momo@momo.com',
         to: 'user@appsus.com',
@@ -20,7 +20,7 @@ export const mailsData = [
             We are sorry to hear that you have been experiencing some difficulties with our website. We would really appreciate if you could let us know what specifically you have been having trouble with. That way, we can look into the issue and try to resolve it as soon as possible.
             
             Thank you for your time and we hope to hear from you soon.`,
-        isRead: false,
+        isRead: true,
         sentAt: 1551133930700,
         from: 'momot@momo.com',
         to: 'user@appsus.com',
@@ -45,7 +45,7 @@ export const mailsData = [
         Sincerely,
         
         Ido`,
-        isRead: false,
+        isRead: true,
         sentAt: 1551133930800,
         from: 'momog@momo.com',
         to: 'user@appsus.com',
@@ -77,12 +77,12 @@ export const mailsData = [
         
         Take care,
         `,
-        isRead: true,
+        isRead: false,
         sentAt: 1551133930594,
         from: 'momo@momo.com',
         to: 'user@appsus.com',
         type: 'inbox',
-        isStar: true,
+        isStar: false,
     },
     {
         id: 'e106',
@@ -100,7 +100,7 @@ export const mailsData = [
         
         Take care,
         `,
-        isRead: true,
+        isRead: false,
         sentAt: 1551133930594,
         from: 'momo@momo.com',
         to: 'user@appsus.com',
@@ -124,7 +124,7 @@ export const mailsData = [
         from: 'momo@momo.com',
         to: 'user@appsus.com',
         type: 'inbox',
-        isStar: true,
+        isStar: false,
     },
     {
         id: 'e108',
@@ -132,7 +132,7 @@ export const mailsData = [
         body: `It was a dark and stormy night. Phillip had been driving home from work, and was now about an hour away from his house. He had made it the last few miles, but was now in the throes of a full-blown panic attack. His breaths came in short gasps and his heart was pounding so hard, it felt like it was trying to escape his chest. He pulled to the side of the road, scattering gravel, and tried to calm himself. He closed his eyes and took several deep breaths before starting the car. He crept along the road, his car the only light in a wide and dark world. The rain continued to beat against the windshield like the footsteps of some unseen thing.
 
         Suddenly, the car was thrust forward and Phillip yelped. His car had hit something, but he couldn't see what it was. He put the car in park and got out, his heart pounding. He slowly made his way to the front of the car, his hand shaking as he reached for the flashlight. He shone the light around and saw that he had hit a deer. The deer was still alive, and Phillip felt a wave of guilt wash over him. He knew he should put the deer out of its misery, but he`,
-        isRead: false,
+        isRead: true,
         sentAt: 1551133930700,
         from: 'momot@momo.com',
         to: 'user@appsus.com',
@@ -157,7 +157,7 @@ export const mailsData = [
         Sincerely,
         
         Ido`,
-        isRead: false,
+        isRead: true,
         sentAt: 1551133930800,
         from: 'momog@momo.com',
         to: 'user@appsus.com',
@@ -210,7 +210,32 @@ Thank you for being you.
 
 Sincerely,
         `,
-        isRead: true,
+        isRead: false,
+        sentAt: 1551133930594,
+        from: 'momo@momo.com',
+        to: 'user@appsus.com',
+        type: 'inbox',
+        isStar: true,
+    },
+    {
+        id: 'e113',
+        subject: `Stay cool, and keep your wits about you`,
+        body: `
+        Hello,
+
+I hope you are doing well. I am writing to you because I wanted to share something with you. I have been thinking about you a lot lately and I just wanted to let you know how much I appreciate you.
+
+You are such a kind and caring person, always putting others first. I admire that about you. You are also so strong and resilient, never giving up even when things are tough. I know that you can achieve anything you set your mind to.
+
+I am so proud of you and I know that you will continue to do great things. I am always here for you if you need me. I hope you know that.
+
+I just wanted to let you know how much I appreciate you and how proud I am of you. You are an amazing person and I know that you will continue to achieve great things.
+
+Thank you for being you.
+
+Sincerely,
+        `,
+        isRead: false,
         sentAt: 1551133930594,
         from: 'momo@momo.com',
         to: 'user@appsus.com',

@@ -27,7 +27,7 @@ export default {
             
             filterBy: {
                 subject: '',
-                type:'',
+                type:'inbox',
                 isRead: false,
                 isStar: false,
             }

@@ -59,11 +59,10 @@ export default {
                 mails = mails.filter(mail => mail.type === this.filterBy.type)
             }
             if (this.filterBy.isRead) {
-                mails = mails.filter(mail => mail.isRead === this.filterBy.isRead)
+                mails = mails.filter(mail => mail.isRead === !this.filterBy.isRead)
             }
             if (this.filterBy.isStar) {
                 mails = mails.filter(mail => mail.isStar === this.filterBy.isStar)
-                console.log('star', this.filterBy.isStar)
             }
 
             return mails
