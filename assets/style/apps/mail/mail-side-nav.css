@@ -4,7 +4,6 @@
     width: 25%;
     padding: 1rem;
     color: var(--clr1);
-    border-block: 1px solid var(--clr4);
 }
 
 .side-nav-list{
