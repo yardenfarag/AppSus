@@ -9,9 +9,9 @@ import addBookPage from '../views/add-book-page.cmp.js'
 export default {
     template: `
     <section class="book-app">
-        <add-book-page @updateBooks="updateDisplay"/>
         <book-filter @filter="filter"/>
         <book-list v-if="books" @selected="selectBook" @remove="removeBook" :books="booksToShow"/>
+        <add-book-page @updateBooks="updateDisplay"/>
     </section>
     `,
     created() {

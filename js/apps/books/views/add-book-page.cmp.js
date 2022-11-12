@@ -9,7 +9,7 @@ export default {
             <div v-if="books" class="search-results">
                 <ul v-for="book in books">
                     <li>{{book.volumeInfo.title}}</li>
-                    <button @click="addBook(book.id); updateBooks" class="btn">Add</button>
+                    <button @click="addBook(book.id); updateBooks()" class="btn">Add</button>
                 </ul>
             </div>
         </section>
@@ -40,6 +40,7 @@ export default {
                     eventBus.emit('user-msg', msg)
                 })
                 .catch(err => {
+                    console.log('im an error');
                     showErrorMsg('Something Went Wrong.. Try Again')
                 })
                 this.clearInputAndBookList()

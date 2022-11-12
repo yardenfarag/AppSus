@@ -34,6 +34,7 @@
   opacity:0;
   transition: top .3s;
   transition: opacity .4s;
+  z-index: 20;
 }
 
 nav.open {

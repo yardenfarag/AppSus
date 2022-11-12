@@ -61,3 +61,10 @@ input {
     gap:5px;
     align-items: center;
 }
+
+@media (max-width: 800px) {
+    .add-book {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
