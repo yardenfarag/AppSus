@@ -7,8 +7,8 @@
     flex-grow: 2;
 }
 
-.page-nav-btn:disabled{
-    color: aqua;
+.page-nav-btn.disabled{
+    color: var(--clr3)
 }
 
 .mail-filter button{

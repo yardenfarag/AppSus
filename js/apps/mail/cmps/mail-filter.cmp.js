@@ -22,8 +22,8 @@ export default {
             <button v-if="!filterBy.isStar" @click="filterBy.isStar = !filterBy.isStar;filter();" class="mail-filter-read-btn"><i class="fa-regular fa-star"></i></button>
 
             <button @click="refresh"><i class="fa-solid fa-arrows-rotate"></i></button>
-            <button :disabled="pageIdx <= 0" @click="navPage(-1)"><i @class="disablePrev" class="page-nav-btn fa-solid fa-caret-left"></i></button>
-            <button :disabled="pageIdx >= 3" @click="navPage(1)"><i class="fa-solid fa-caret-right"></i></button>
+            <button :disabled="pageIdx <= 0" @click="navPage(-1)"><i :class="disablePrev" class="page-nav-btn fa-solid fa-caret-left"></i></button>
+            <button :disabled="pageIdx >= 2" @click="navPage(1)"><i  :class="disableNext" class="page-nav-btn fa-solid fa-caret-right"></i></button>
 
             
         </section>
@@ -44,8 +44,10 @@ export default {
     },
     computed: {
         disablePrev(){
-            console.log(this.pageIdx)
             if(this.pageIdx <= 0) return 'disabled'
+        },
+        disableNext(){
+            if(this.pageIdx >= 2) return 'disabled'
         }
     },
 

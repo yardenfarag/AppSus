@@ -1,15 +1,15 @@
-.main-mail-preview{
+.main-mail-preview {
     overflow: hidden;
     max-height: 40px;
     justify-content: space-between;
 }
 
-.main-mail-preview:hover{
+.main-mail-preview:hover {
     box-shadow: inset 1px 0 0 rgb(255 255 255 / 20%), inset -1px 0 0 rgb(255 255 255 / 20%), 0 0 4px 0 rgb(95 99 104 / 60%), 0 0 6px 2px rgb(95 99 104 / 60%);
 
 }
 
-.mail-preview{
+.mail-preview {
     justify-content: space-between;
     color: var(--clr2);
     text-align: left;
@@ -19,59 +19,58 @@
 }
 
 
-.mail-card-content{
+.mail-card-content {
 
     cursor: pointer;
     align-items: center;
-    justify-content: center ;
-    gap: 2rem;
+    justify-content: center;
+    gap: 1rem;
     max-height: 40px;
     padding: 10px;
-    
-    
+
+
 }
 
-.mail-body-prev{
+.mail-body-prev {
     overflow: hidden;
-    max-width:500px;
+    max-width: 500px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     font-weight: normal;
 }
 
-.mail-card-content:hover{
+.mail-card-content:hover {
     cursor: pointer;
 }
 
-.mail-subject{
+.mail-subject {
     overflow: hidden;
-    max-width: 400px;
-    min-width: 400px;
+    width: 300px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     font-weight: normal;
 }
 
-.mail-from{
-    
+.mail-from {
     font-weight: normal;
+    min-width: 200px;
 }
 
-.mail-date{
+.mail-date {
     align-items: center;
-    
+
 }
 
-.card-button{
-border: none;
-color: var(--clr2);
-background-color: inherit;
-font-size: 1.2rem;
+.card-button {
+    border: none;
+    color: var(--clr2);
+    background-color: inherit;
+    font-size: 1.2rem;
 }
 
-.fa-solid.fa-star{
+.fa-solid.fa-star {
     color: gold;
 }
 
@@ -81,21 +80,28 @@ font-size: 1.2rem;
 }
 
 
-@media (max-width: 850px){
+@media (max-width: 850px) {
 
-    .main-mail-preview{
-        max-width: 750px;
-        max-height: 800px;
+    .mail-card {}
+
+    .main-mail-preview {
+        min-height: 80px;
+        width: 100%;
     }
 
-    .mail-preview{
+    .mail-preview {
         /* flex-direction: column; */
-        color: aqua;
+
     }
 
-    .mail-card-content{
+    .mail-card-content-text {
         flex-direction: column;
     }
-  
-    
+
+    .mail-body-prev {
+        display: none;
+    }
+
+
+
 }

@@ -45,7 +45,7 @@ export default {
                 // sortBy: '',
             },
             pageIdx: 0,
-            mailInPage: 10,
+            mailInPage: 18,
         }
     },
 

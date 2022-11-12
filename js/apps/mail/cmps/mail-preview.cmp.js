@@ -11,9 +11,9 @@ export default {
             <router-link :to="'/mail/' + mail.id">         
                 <section  class="mail-card-content flex">
                     
-                <button v-if="mail.isStar" class="card-button" @click="star(mail)" :class="starClass"><i class="fa-solid fa-star"></i></button>
-                <button v-if="!mail.isStar" class="card-button" @click="star(mail)" :class="starClass"><i class="fa-regular fa-star"></i></button>
-                    <section class="mail-card-content flex" @click="details(mail)">
+                <button v-if="mail.isStar" class="card-button star" @click="star(mail)" :class="starClass"><i class="fa-solid fa-star"></i></button>
+                <button v-if="!mail.isStar" class="card-button star" @click="star(mail)" :class="starClass"><i class="fa-regular fa-star"></i></button>
+                    <section class="mail-card-content-text flex" @click="details(mail)">
                         <h5 class="mail-from" :class="mailIsRead">{{ mail.from }}</h5>
 
                         <div >
