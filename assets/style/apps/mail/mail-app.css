@@ -3,7 +3,7 @@
 @import './mail-add.css';
 @import './mail-side-nav.css';
 @import './mail-filter.css';
-@import './mail/mail-details.css';
+@import './mail-details.css';
 @import './mail-list.css';
 
 .mail-app{
