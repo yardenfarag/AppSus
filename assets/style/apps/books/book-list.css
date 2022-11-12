@@ -1,0 +1,129 @@
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    /* height: 100vh; */
+    /* background-color: var(--clr2); */
+    position: relative;
+    padding: 10px;
+}
+
+.book {
+    border-radius: 5px;
+    background-color: var(--clr4);
+    display: flex;
+    width: 300px;
+    font-weight: bold;
+    flex-direction: column;
+    /* padding: 1px; */
+    /* align-self: center; */
+    /* justify-content: center; */
+}
+
+.book img {
+    width: 100px;
+}
+
+.book .book-info {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    padding: 5px;;
+}
+
+.book .book-props {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.book .title {
+    text-transform: capitalize;
+}
+
+.book .actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding-block-start: 5px;
+}
+
+.book .actions .btn {
+    width: 70px;
+    text-align: center;
+    margin-block-end: 5px;
+}
+
+
+
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    /* height: 100vh; */
+    /* background-color: var(--clr2); */
+    position: relative;
+    padding: 10px;
+}
+
+.book {
+    border-radius: 5px;
+    background-color: var(--clr4);
+    display: flex;
+    width: 300px;
+    font-weight: bold;
+    flex-direction: column;
+    /* padding: 1px; */
+    /* align-self: center; */
+    /* justify-content: center; */
+}
+
+.book img {
+    width: 100px;
+}
+
+.book .book-info {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    padding: 5px;;
+}
+
+.book .book-props {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.book .title {
+    text-transform: capitalize;
+}
+
+.book .actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding-block-start: 5px;
+}
+
+.book .actions .btn {
+    width: 70px;
+    text-align: center;
+    margin-block-end: 5px;
+    min-height: fit-content;
+}
+
+
+

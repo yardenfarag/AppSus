@@ -12,6 +12,7 @@ export default {
         <section :style="{backgroundColor: note.style.backgroundColor}" class="note-edit-modal">
         <div class="note">
                 <form @submit.stop.prevent="saveNote">
+                    <p v-if="noteToEdit.type === 'note-txt'">Note Title</p><input v-if="noteToEdit.type === 'note-txt'" type="text" v-model="noteToEdit.info.title" autofocus/>
                     <p>Note Text</p><input type="text" v-model="noteToEdit.info.txt" autofocus/>
                     <p v-if="noteToEdit.info.imgUrl">Note Image Url</p> <input v-if="noteToEdit.info.imgUrl" type="text" v-model="noteToEdit.info.imgUrl"/>
                     <p v-if="noteToEdit.info.vidUrl">Note Video Url</p> <input v-if="noteToEdit.info.vidUrl" type="text" v-model="noteToEdit.info.vidUrl" />

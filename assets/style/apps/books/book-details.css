@@ -1,0 +1,68 @@
+
+.book-details {
+    width: 85%;
+    background-color: var(--clr4);
+    border-radius: 5px;
+    padding: 10px;
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.book-details .cover img {
+    width: 400px;
+    align-items: center;
+}
+
+.book-details .full-details {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+    border-inline-start: 1px solid var(--clr1);
+    border-inline-end: 1px solid var(--clr1);
+    padding: 5px;
+}
+
+.book-details h6{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+.book-details .review-add {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap:60px;
+    align-items: center;
+}
+
+.book-details .close {
+    align-self: baseline;
+}
+
+.book-details .close .btn {
+    padding: 5px;
+}
+
+.low {
+    color: red;
+}
+
+.high {
+    color: green;
+}
+
+.review-add input, select,textarea {
+    border:none;
+    border-radius: 2rem;
+}
+
+.book-details .read-more {
+    min-height: 30px;
+}

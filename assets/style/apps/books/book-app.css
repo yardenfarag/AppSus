@@ -1,0 +1,63 @@
+@import url('./add-book.css');
+@import url('./book-list.css');
+@import url('./book-details.css');
+@import url('./book-filter.css');
+@import url('./book-reviews.css');
+@import url('./book-navigation.css');
+@import url('./add-book.css');
+
+* {
+    box-sizing: border-box;
+}
+
+/* BASICS */
+
+body {
+    background-color: var(--clr4);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--clr1);
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+h1 {
+    margin: 0;
+}
+
+.btn {
+    cursor: pointer;
+    color: var(--clr4);
+    background-color: var(--clr1);
+    border: none;
+    border-radius: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: var(--clr3);
+    color: var(--clr1);
+}
+
+
+.book-app {
+    width: 85%;
+    margin: auto;
+    overflow: hidden;
+}
+
+input {
+    border:none;
+    border-radius: 2rem;
+    height: 40px;
+}
+
+.add-book {
+    display: flex;
+    gap:5px;
+    align-items: center;
+}

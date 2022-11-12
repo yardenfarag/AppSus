@@ -1,0 +1,13 @@
+.book-filter input {
+    border:1px solid var(--clr1);
+    background-color: var(--clr1);
+    border-radius: 2rem;
+    padding: 5px;
+    color: var(--clr3)
+}
+
+.book-filter {
+    margin-block: 5px;
+    display: flex;
+    flex-direction: column;
+}

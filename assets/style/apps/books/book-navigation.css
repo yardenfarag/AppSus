@@ -1,0 +1,9 @@
+.book-navigation {
+    display: flex;
+    justify-content: space-evenly;
+    margin-block: 5px;
+}
+
+.book-navigation a {
+    padding: 5px;
+}

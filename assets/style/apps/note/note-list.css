@@ -111,6 +111,11 @@
     text-decoration: line-through;
 }
 
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
 /* very small */
 
 @media (min-width: 450px) {

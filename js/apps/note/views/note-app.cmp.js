@@ -82,11 +82,9 @@ export default {
             note.info.title = mail.subject
             note.info.txt = mail.body
             note.isPinned = true
-            console.log(note)
             this.addNote(note)
         },
         updateNote(note) {
-            console.log(this.notes)
             if (note.type === 'note-todos') {
                 let todos = note.info.todos.split(',')
                 note.info.todos = todos
@@ -97,7 +95,6 @@ export default {
             })
         },
         addNote(note) {
-            console.log(this.notes);
             noteService.save(note)
             .then(note => {
                 this.notes.unshift(note)
@@ -123,6 +120,7 @@ export default {
                  noteService.query()
                  .then(notes => {
                  this.notes = notes.filter(note => !note.isPinned)
+                 this.pinnedNotes = notes.filter(note => note.isPinned)
                 })
             })
         })
@@ -149,7 +147,9 @@ export default {
             var notes = this.notes.filter(
                 note => regex.test(note.info.txt) &&
                 !note.isPinned)
-            notes = notes.filter(note => this.filterBy.type === note.type)                                        
+            if (this.filterBy.type) {
+                notes = notes.filter(note => this.filterBy.type === note.type)                                        
+            }
 
             return notes
         },
