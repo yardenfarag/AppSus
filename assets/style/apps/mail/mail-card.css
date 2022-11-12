@@ -87,19 +87,20 @@
     .main-mail-preview {
         min-height: 80px;
         width: 100%;
+        padding-top: 1rem;
     }
 
-    .mail-preview {
-        /* flex-direction: column; */
+    .mail-from {
 
     }
 
     .mail-card-content-text {
+        
         flex-direction: column;
     }
 
     .mail-body-prev {
-        display: none;
+        /* display: none; */
     }
 
 
