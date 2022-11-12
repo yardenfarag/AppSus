@@ -94,7 +94,6 @@ export default {
             this.$parent.$emit('changeStyle', noteId, color)
         },
         shareToMail(note) {
-            this.$router.push('/mail')
             eventBus.emit('noteToMail', note)
         },
         editNote(noteId) {
