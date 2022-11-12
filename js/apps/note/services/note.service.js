@@ -50,6 +50,10 @@ function getEmptyNote() {
     }
 }
 
+// function changeNoteIdx(note) {
+//     const note = get(note)
+// }
+
 function getNextNoteId(noteId) {
     return storageService.query(NOTE_KEY)
     .then(notes => {
@@ -179,7 +183,7 @@ function _createNotes() {
                     txt: "Features to Support", 
                     todos: ['Note-Canvas', 'Note-Audio', 'Note-Map'] 
                 }, 
-                style: { backgroundColor: "#9957bb" }, 
+                style: { backgroundColor: "#f1c500" }, 
             },
             { 
                 id: "n117", 
@@ -199,10 +203,28 @@ function _createNotes() {
                 id: "n119",
                 type: "note-audio",
                 isPinned: true,
-                info: { txt: 'my first audio note', audUrl:'https://soundcloud.com/fvckgenres/lny-tnz-like-heaven-ft-erich-lennig-extended-mix?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing'},
+                info: { txt: 'my first audio note', audUrl:'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3'},
                 style: { backgroundColor: "#eb705e" },
-            }
+            },
+            { 
+                id: "n120", 
+                type: "note-todos", 
+                isPinned: true,
+                info: { 
+                    txt: "To Dos", 
+                    todos: ['Get up', 'Eat breakfast', 'Go to work', 'Come home', 'Eat dinner', 'Go to bed'] 
+                }, 
+                style: { backgroundColor: "#3296e1" }, 
+            },
+            { 
+                id: "n121", 
+                type: "note-video", 
+                isPinned: false,
+                info: { vidUrl: 'https://www.youtube.com/embed/mPZkdNFkNps', txt: "Relax" }, 
+                style: { backgroundColor: "#f1c500" }, 
+            },
         ]
+
         utilService.saveToStorage(NOTE_KEY, notes)
     }
     return notes

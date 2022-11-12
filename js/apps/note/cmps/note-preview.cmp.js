@@ -1,3 +1,5 @@
+import { noteService } from '../services/note.service.js'
+
 import noteTxt from '../cmps/note-txt.cmp.js'
 import noteImg from '../cmps/note-img.cmp.js'
 import noteVideo from '../cmps/note-video.cmp.js'
@@ -29,7 +31,13 @@ export default {
                         </div>
                     <button @click="removeNote(note.id)" class="note-editor-btn" title="Remove"><i class="fa-solid fa-trash"></i></button>
                 </div>
-                <component  @click.stop="toggleEditModal" 
+                <component 
+                draggable="true"
+                @dragstart="startDrag($event, note)" 
+                @drop="onDrop($event, note.idx)"
+                @dragenter.prevent
+                @dragover.prevent
+                @click.stop="toggleEditModal" 
                     :is="note.type" 
                     :info="note.info"> 
                 </component>
@@ -44,6 +52,24 @@ export default {
         }
     },
     methods: {
+        startDrag(ev, note) {
+            console.log(ev, note)
+            ev.dataTransfer.dropEffect = 'move'
+            ev.dataTransfer.effectAllowed = 'move'
+            ev.dataTransfer.setData('noteId', note.id)
+        },
+        onDrop(ev, idx) {
+            console.log(ev);
+            console.log(idx);
+            const noteId = ev.dataTransfer.getData('noteId')
+            const note = noteService.get(noteId)
+            const notes = noteService.query()
+            .then (notes => {
+                notes.splice(idx, 0, notes.splice(note.idx, 1)[0])
+                console.log(notes)
+            })
+
+        },
         toggleEditModal() {
             this.noteSelected = !this.noteSelected
             if (this.noteSelected === true) {

@@ -3,7 +3,7 @@ export default {
     template: `
         <section class="note-audio">
             <p>{{info.txt}}</p>
-            <audio controls :src="info.audUrl"></audio>
+            <canvas></canvas>
         </section>
     `,
 }

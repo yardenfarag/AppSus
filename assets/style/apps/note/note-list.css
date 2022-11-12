@@ -8,6 +8,10 @@
     -webkit-column-gap: 10px;
 }
 
+.note-list input:focus {
+  outline: 5px inset var(--secondary-clr2);
+}
+
 .note {
     color: var(--clr1);
     outline: 1px solid var(--clr1);

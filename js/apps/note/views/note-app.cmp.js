@@ -58,6 +58,10 @@ export default {
         },
         updateNote(note) {
             console.log(this.notes)
+            if (note.type === 'note-todos') {
+                let todos = note.info.todos.split(',')
+                note.info.todos = todos
+            }
             noteService.save(note)
             .then(note => {
                 console.log(note)

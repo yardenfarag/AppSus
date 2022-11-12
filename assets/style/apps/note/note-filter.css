@@ -8,3 +8,7 @@
     height: 40px;
     width: 300px;
 }
+
+.note-filter input:focus {
+    outline: 5px inset var(--secondary-clr2);
+  }

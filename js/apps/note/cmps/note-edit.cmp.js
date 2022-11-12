@@ -12,12 +12,13 @@ export default {
         <section :style="{backgroundColor: note.style.backgroundColor}" class="note-edit-modal">
         <div class="note">
                 <form @submit.stop.prevent="saveNote">
-                    <input type="text" v-model="noteToEdit.info.txt" autofocus/>
-                    <input v-if="noteToEdit.info.imgUrl" type="text" v-model="noteToEdit.info.imgUrl" />
-                    <input v-if="noteToEdit.info.vidUrl" type="text" v-model="noteToEdit.info.vidUrl" />
-                    <input v-if="noteToEdit.info.todos" type="text" v-model="noteToEdit.info.todos" />
+                    <p>Note Text</p><input type="text" v-model="noteToEdit.info.txt" autofocus/>
+                    <p v-if="noteToEdit.info.imgUrl">Note Image Url</p> <input v-if="noteToEdit.info.imgUrl" type="text" v-model="noteToEdit.info.imgUrl"/>
+                    <p v-if="noteToEdit.info.vidUrl">Note Video Url</p> <input v-if="noteToEdit.info.vidUrl" type="text" v-model="noteToEdit.info.vidUrl" />
+                    <p v-if="noteToEdit.info.todos">Note Todos</p> <input v-if="noteToEdit.info.todos" type="text" v-model="noteToEdit.info.todos" />
+                    <p v-if="noteToEdit.info.audUrl">Note Audio Url</p> <input v-if="noteToEdit.info.audUrl" type="text" v-model="noteToEdit.info.audUrl" />
                     <router-link to="/note">
-                        <button @click="toggleNoteEdit();saveNote(noteToEdit)" >Save</button>
+                        <button @click="toggleNoteEdit();saveNote(noteToEdit)" class="note-btn">Save</button>
                     </router-link>
                 </form>
             </div>

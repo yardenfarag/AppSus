@@ -1,5 +1,98 @@
 .about-page {
     height: 80vh;
-    background-image: url('../../img/about-us.jpg');
-    background-size:50%;
+    background-color: var(--clr4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.about-page h1 {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px;
+    font-size:xxx-large;
+}
+
+.about-page h2 {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px;
+    font-size:xx-large;
+}
+
+.about-us {
+    width: 42vw;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cat {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cat p {
+    text-align: center;
+}
+
+.cat img {
+    width: 100%;
+    border-radius: 50%;
+    border: 4px groove var(--secondary-clr2);
+}
+
+.card {
+    padding: 10px;
+    height: 220px;
+    gap: 30px;
+    display: flex;
+    align-items: center;
+    border: 3px inset #db546268;
+    border-radius: 10px;
+}
+
+.info p {
+    color: var(--clr1);
+}
+
+.contact input {
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.contact {
+    margin-block-end: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact button {
+    color: var(--clr1);
+    width: fit-content;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--secondary-clr2);
+}
+
+.contact button:hover {
+    opacity: 0.7;
+}
+
+.contact textarea {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-inline: 10px;
+}
+.about-page input:focus, textarea:focus {
+    outline: 5px inset var(--secondary-clr2);
+}
+
+.user-info {
+    display: flex;
+    gap: 10px;
 }

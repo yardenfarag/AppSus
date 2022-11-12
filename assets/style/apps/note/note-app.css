@@ -25,3 +25,13 @@
     transform: rotate(180deg);
 }
 
+.note-app .note-btn {
+    border-radius: 2rem;
+    border: none;
+    background-color: var(--clr1);
+}
+
+.note-btn:hover {
+    background-color: var(--clr2);
+}
+
