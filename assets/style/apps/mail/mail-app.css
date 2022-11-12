@@ -1,9 +1,10 @@
-@import '/assets/style/apps/mail/mail-card.css';
-@import '/assets/style/apps/mail/mail-add.css';
-@import '/assets/style/apps/mail/mail-side-nav.css';
-@import '/assets/style/apps/mail/mail-filter.css';
-@import '/assets/style/apps/mail/mail-details.css';
-@import '/assets/style/apps/mail/mail-list.css';
+
+@import './mail-card.css';
+@import './mail-add.css';
+@import './mail-side-nav.css';
+@import './mail-filter.css';
+@import './mail-details.css';
+@import './mail-list.css';
 
 .mail-app{
     background-color: inherit;

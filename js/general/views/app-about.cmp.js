@@ -10,7 +10,7 @@ export default {
             <div class="about-us">
                 <div className="card1">
                     <div className="cat">
-                        <img src="../../../assets/img/ginger-cat.jpg" alt="" />
+                        <img src="assets/img/ginger-cat.jpg" alt="" />
                         <p>Yotam, Full Stack Developer</p>
                     </div>
                     <div className="info">
@@ -21,7 +21,7 @@ export default {
                 </div>
                 <div className="card2">
                     <div className="cat">
-                        <img src="../../../assets/img/gray-cat.jpg" alt="" />
+                        <img src="assets/img/gray-cat.jpg" alt="" />
                         <p>Yarden, Full Stack Developer</p>
                     </div>
                     <div className="info">
