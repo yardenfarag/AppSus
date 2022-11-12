@@ -1,5 +1,9 @@
 .note-filter {
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px
 }
 
 .note-filter input {
@@ -9,6 +13,20 @@
     width: 300px;
 }
 
-.note-filter input:focus {
+.note-filter select {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 2rem;
+    border: none;
+    height: 40px;
+    padding: 5px;
+}
+
+.note-filter input:focus, select:focus {
     outline: 5px inset var(--secondary-clr2);
-  }
+}
+
+@media (min-width: 780px) {
+    .note-filter {
+        flex-direction: row;
+    }
+}

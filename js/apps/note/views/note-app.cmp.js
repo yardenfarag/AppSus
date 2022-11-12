@@ -29,6 +29,25 @@ export default {
         }
     },
     methods: {
+        dragAndDrop(object) {
+            const dragIdx = this.notes.findIndex(note => note.id === object.noteId)
+            const dropIdx = this.notes.findIndex(note => note.id === object.dropId)
+            const dragNote = this.notes[dragIdx]
+            const dropNote = this.notes[dropIdx]
+
+            const pinnedDragIdx = this.pinnedNotes.findIndex(note => note.id === object.noteId)
+            const pinnedDropIdx = this.pinnedNotes.findIndex(note => note.id === object.dropId)
+            const pinnedDrag = this.pinnedNotes[pinnedDragIdx]
+            const pinnedDrop = this.pinnedNotes[pinnedDropIdx]
+
+            if (pinnedDrag) {
+                this.pinnedNotes.splice(pinnedDragIdx, 1)
+                this.pinnedNotes.splice(pinnedDropIdx, 0, pinnedDrag)
+                return
+            }
+            this.notes.splice(dragIdx, 1)
+            this.notes.splice(dropIdx, 0, dragNote)
+        },
         duplicateNote(noteId) {
             let duplicate = noteService.getEmptyNote()
             noteService.get(noteId)
@@ -127,25 +146,23 @@ export default {
         notesForShow() {
             if (!this.notes) return
             const regex = new RegExp(this.filterBy.txt, 'i')
-            return this.notes.filter(note => !note.isPinned &&
-                regex.test(note.info.txt) &&
-                regex.test(note.type))
+            var notes = this.notes.filter(
+                note => regex.test(note.info.txt) &&
+                !note.isPinned)
+            notes = notes.filter(note => this.filterBy.type === note.type)                                        
+
+            return notes
         },
-        pinnedNotesForShow() {
-            if (!this.pinnedNotes) return
-
-            noteService.query()
-                 .then(notes => {
-                    const regex = new RegExp(this.filterBy.txt, 'i')
-                    let pinnedNotesForDisplay = notes.filter(note => note.isPinned &&
-                        regex.test(note.info.txt) &&
-                        regex.test(note.type))
-                    this.pinnedNotes = pinnedNotesForDisplay
-                 })
-
-            return this.pinnedNotes
-        }
+        pinnedNotesForShow() { 
+            const regex = new RegExp(this.filterBy.txt, 'i')
+            var pinnedNotes = this.pinnedNotes.filter(
+                note => regex.test(note.info.txt))
+            if (this.filterBy.type) {
+                pinnedNotes = pinnedNotes.filter(note => this.filterBy.type === note.type)                                        
+            }
+            return pinnedNotes
     },
+},
     created() {
         noteService.query()
         .then(notes => {
@@ -156,6 +173,11 @@ export default {
             this.filterBy = payload
         })
         eventBus.on('saveNote', payload => {this.updateNote(payload)})
+        eventBus.on('dragAndDrop', (drag, drop) => {
+            this.dragAndDrop(drag, drop)
+        })
+    },
+    mounted() {
         eventBus.on('mailToNote', payload => {this.mailToNote(payload)})
     },
     components: {

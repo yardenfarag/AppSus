@@ -18,6 +18,11 @@
     margin: 5px;
 }
 
+.note-add .inputs {
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
 .inputs input.secondary  {
     display:none;
 }
@@ -68,6 +73,12 @@
 .note-add .note-upload.show-recorder {
     display: flex;
     justify-content: space-evenly;
+}
+
+.note-add .record-btns {
+    display: flex;
+    align-items: center;
+    gap:10px;
 }
 
 .stop, .start {

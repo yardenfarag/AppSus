@@ -21,8 +21,10 @@ export default {
                     </div>
                     <div :class="['note-upload', recorder, showRecorder]">
                         <p>or record your own</p>
-                        <button @click.prevent.stop="recordAudio()" :class="['note-btn', 'start', recording]"><i class="fa-solid fa-circle-play"></i></button>
-                        <button @click.prevent.stop="stopRecording()" class="note-btn stop"><i class="fa-solid fa-circle-stop"></i></button>
+                        <div className="record-btns">
+                            <button @click.prevent.stop="recordAudio()" :class="['note-btn', 'start', recording]"><i class="fa-solid fa-circle-play"></i></button>
+                            <button @click.prevent.stop="stopRecording()" class="note-btn stop"><i class="fa-solid fa-circle-stop"></i></button>
+                        </div>    
                     </div>
                 </div>
                 <div class="note-types">

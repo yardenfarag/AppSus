@@ -12,7 +12,7 @@ export default {
     name: 'note-preview',
     props: ['note'],
     template: `
-        <section class="note-preview">
+        <section class="note-preview" draggable="true" @dragstart="startDrag($event,note.id)" @drop="onDrop($event,note.id)" @dragenter.prevent @dragover.prevent>
             <div :style="{backgroundColor: note.style.backgroundColor}" class="note">
                 <div className="note-editor">
                     <div className="pinning">
@@ -33,11 +33,6 @@ export default {
                     <button @click="removeNote(note.id)" class="note-editor-btn" title="Remove"><i class="fa-solid fa-trash"></i></button>
                 </div>
                 <component 
-                draggable="true"
-                @dragstart="startDrag($event, note)" 
-                @drop="onDrop($event, note.idx)"
-                @dragenter.prevent
-                @dragover.prevent
                 @click.stop="toggleEditModal" 
                     :is="note.type" 
                     :info="note.info"> 
@@ -53,23 +48,14 @@ export default {
         }
     },
     methods: {
-        startDrag(ev, note) {
-            console.log(ev, note)
+        startDrag(ev, noteId) {
             ev.dataTransfer.dropEffect = 'move'
             ev.dataTransfer.effectAllowed = 'move'
-            ev.dataTransfer.setData('noteId', note.id)
+            ev.dataTransfer.setData('noteId', noteId)
         },
-        onDrop(ev, idx) {
-            console.log(ev);
-            console.log(idx);
+        onDrop(ev, dropId) {
             const noteId = ev.dataTransfer.getData('noteId')
-            const note = noteService.get(noteId)
-            const notes = noteService.query()
-            .then (notes => {
-                notes.splice(idx, 0, notes.splice(note.idx, 1)[0])
-                console.log(notes)
-            })
-
+            eventBus.emit('dragAndDrop', {noteId, dropId})
         },
         toggleEditModal() {
             this.noteSelected = !this.noteSelected
