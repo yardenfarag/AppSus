@@ -53,6 +53,7 @@ export default {
                 duplicate.type = note.type
                 duplicate.isPinned = note.isPinned
                 duplicate.info.txt = note.info.txt
+                duplicate.info.title = note.info.title
                 duplicate.info.imgUrl = note.info.imgUrl
                 duplicate.info.vidUrl = note.info.vidUrl
                 duplicate.info.todos = note.info.todos
@@ -61,8 +62,14 @@ export default {
             })
             noteService.save(duplicate)
             .then(note => {
-                const idx = this.notes.findIndex(note => note.id === noteId)
-                this.notes.splice(idx, 0, note)
+                if(note.isPinned) {
+                    const idx = this.pinnedNotes.findIndex(note => note.id === noteId)
+                    this.pinnedNotes.splice(idx, 0, note)
+                }
+                if(!note.isPinned) {
+                    const idx = this.notes.findIndex(note => note.id === noteId)
+                    this.notes.splice(idx, 0, note)
+                }
                 showSuccessMsg('Note Added Successfully!')
             })
             .catch(() => showErrorMsg('Something Went Wrong...'))
@@ -135,6 +142,7 @@ export default {
                  noteService.query()
                  .then(notes => {
                  this.notes = notes.filter(note => !note.isPinned)
+                 this.pinnedNotes = notes.filter(note => note.isPinned)
                 })
             })
         })
