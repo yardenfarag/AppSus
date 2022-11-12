@@ -95,6 +95,7 @@ export default {
         },
         shareToMail(note) {
             eventBus.emit('noteToMail', note)
+            this.$router.push('/mail')
         },
         editNote(noteId) {
             this.$parent.$emit('edit', noteId)
