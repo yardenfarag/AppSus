@@ -26,12 +26,15 @@ export default {
                     <li class="mail-side-nav-category flex" @click="trash"><i class="fa-solid fa-trash-can"></i>Trash</li> 
                     <span class="mail-nav-counter">{{ trashCalc }}</span>
                 </div>
-        </ul>
+            </ul>
+            
+            <button v-if="isMenu" class="close-menu-btn" @click="toggleSideNav">CLOSE</button>
     </section>
     `,
     data(){
         return{
             counters: null,
+            isMenu: false,
         }
     },
     computed:{
@@ -88,8 +91,15 @@ export default {
         trash(){
             eventBus.emit('filterType', 'trash')
         },
-        // star(){
-        //     eventBus.emit('filterType', 'trash')
-        // },
+        toggleMenu(){
+            this.isMenu = !this.isMenu
+        },
+        toggleSideNav(){
+            console.log('to')
+            eventBus.emit('toggleSideNav', true)
+        }
+    },
+    created(){
+        eventBus.on('toggleMenu', this.toggleMenu )
     },
 }

@@ -16,7 +16,8 @@ export default {
     <mail-details @details="openDetails" v-if="showDetails" :mail="detailsOfMail"/>
 
             <section v-if="showList" class="mail-main-list">
-            <mail-filter @mailFilter="setFilter"/>
+            <mail-filter @mailFilter="setFilter"
+                         @pageNav = "pageNav"/>
     
                 <article class="mail-card"
                         
@@ -43,8 +44,8 @@ export default {
                 isStar: false,
                 // sortBy: '',
             },
-
-
+            pageIdx: 0,
+            mailInPage: 10,
         }
     },
 
@@ -88,10 +89,11 @@ export default {
                         }
                         return 0
                     })
-            
-                    console.log(mails)
                 }
             }
+            if(this.pageIdx === 1)mails = mails.splice(this.pageIdx, this.mailInPage)
+            else mails = mails.splice((this.pageIdx*this.mailInPage), this.mailInPage)
+
             return mails
         },
 
@@ -111,6 +113,9 @@ export default {
         },
         noteToMail(note){
             console.log(note)
+        },
+        pageNav(pageIdx){
+            this.pageIdx = pageIdx
         }
 
     },

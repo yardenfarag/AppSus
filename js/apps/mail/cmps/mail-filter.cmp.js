@@ -5,7 +5,7 @@ export default {
 
     template: `
         <section class="mail-filter flex">
-            <button @click="toggleMenu">☰</button>
+            <button class="main-sidenav-close" @click="toggleMenu">☰</button>
             <input type="search" 
                    v-model="filterBy.subject"
                    @input="filter"
@@ -22,8 +22,10 @@ export default {
             <button v-if="!filterBy.isStar" @click="filterBy.isStar = !filterBy.isStar;filter();" class="mail-filter-read-btn"><i class="fa-regular fa-star"></i></button>
 
             <button @click="refresh"><i class="fa-solid fa-arrows-rotate"></i></button>
-            <button><i class="fa-solid fa-caret-left"></i></button>
-            <button><i class="fa-solid fa-caret-right"></i></button>
+            <button :disabled="pageIdx <= 0" @click="navPage(-1)"><i @class="disablePrev" class="page-nav-btn fa-solid fa-caret-left"></i></button>
+            <button :disabled="pageIdx >= 3" @click="navPage(1)"><i class="fa-solid fa-caret-right"></i></button>
+
+            
         </section>
     `,
     data() {
@@ -35,9 +37,18 @@ export default {
                 isRead: false,
                 isStar: false,
                 sortBy: '',
-            }
+            },
+            pageIdx: 0,
+            
         }
     },
+    computed: {
+        disablePrev(){
+            console.log(this.pageIdx)
+            if(this.pageIdx <= 0) return 'disabled'
+        }
+    },
+
     methods : {
         filter(){
             console.log(this.filterBy)
@@ -57,9 +68,16 @@ export default {
         },
         toggleMenu(){
             document.body.classList.toggle('menu-open')
+            eventBus.emit('toggleMenu')
+            console.log('ho')
         },
+        navPage(dif){
+            this.pageIdx += dif
+            this.$emit('pageNav', this.pageIdx)
+        }
     },
     created(){
         eventBus.on('filterType', this.type)
+        eventBus.on('toggleSideNav', this.toggleMenu)
     },
 }

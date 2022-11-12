@@ -56,6 +56,16 @@
     background-color: black;
 }
 
+.close-menu-btn{
+    border: 1px solid var(--clr1);
+    border-radius: 1rem;
+    background-color: inherit;
+    color: var(--clr1);
+    width: 80%;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
 @media (max-width: 1100px){
 
     .mail-side-nav{
@@ -70,6 +80,15 @@
     body.menu-open .mail-side-nav{
         transform: translatex(0);
         box-shadow: 5px 3px 11px;;
+    }
 
+    .add-mail-btn{
+        border: 1px solid var(--clr1);
+        border-radius: 1rem;
+        color: black;
+        background-color: var(--clr1);
+        width: 80%;
+        margin-left: 2rem;
+        margin-top: 2rem;
     }
 }
