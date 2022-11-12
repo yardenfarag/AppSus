@@ -74,7 +74,7 @@ export default {
     },
     methods: {
         addMail() {
-            eventBus.emit('addMail', true)
+            eventBus.emit('addMail')
         },
         inbox(){
             eventBus.emit('filterType', 'inbox')

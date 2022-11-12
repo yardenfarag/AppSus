@@ -15,7 +15,6 @@ export default {
     <mail-add v-if="showAdd" />
     <mail-details @details="openDetails" v-if="showDetails" :mail="detailsOfMail"/>
 
-        <!-- <div class="list-bg"> -->
             <section v-if="showList" class="mail-main-list">
             <mail-filter @mailFilter="setFilter"/>
     
@@ -28,9 +27,6 @@ export default {
                         
                     </article>
                 </section>
-
-        <!-- </div> -->
-            
 
     `,
     data() {
@@ -51,9 +47,10 @@ export default {
 
         }
     },
+
     computed: {
+
         mailsToShow() {
-            console.log(this.filterBy)
 
             const regex = new RegExp(this.filterBy.subject, 'i')
             var mails = this.mails.filter(mail => regex.test(mail.subject))
@@ -105,16 +102,24 @@ export default {
         },
         mailAdd() {
             this.showAdd = !this.showAdd
+            console.log(this.showAdd)
         },
         openDetails(mail) {
             this.detailsOfMail = mail
             this.showList = !this.showList
             this.showDetails = !this.showDetails
         },
+        noteToMail(note){
+            console.log(note)
+        }
 
     },
     created() {
         eventBus.on('addMail', this.mailAdd)
+        eventBus.on('noteToMail', note => {
+            this.noteToMail(note)
+            
+        })
     },
     components: {
         mailAdd,
@@ -122,4 +127,5 @@ export default {
         mailPreview,
         mailFilter,
     },
+ 
 }
