@@ -103,14 +103,14 @@ function _createNotes() {
                 id: "n106", 
                 type: "note-txt", 
                 isPinned: true, 
-                info: { txt: "My First Note!" },
+                info: { txt: "My First Note!", title: "I'm so excited!" },
                 style: { backgroundColor: "#9957bb" }, 
             },
             { 
                 id: "n107", 
                 type: "note-txt", 
                 isPinned: true, 
-                info: { txt: 'There are a few reasons why winter is the best season. For one, the weather is usually pretty good. It\'s not too hot and not too cold, and there\'s often a nice breeze. Additionally, winter is a great time to be indoors. You can curl up with a blanket and a good book, or watch a movie. And, of course, winter is the time for holidays!' },
+                info: {title: "Thoughts", txt: 'There are a few reasons why winter is the best season. For one, the weather is usually pretty good. It\'s not too hot and not too cold, and there\'s often a nice breeze. Additionally, winter is a great time to be indoors. You can curl up with a blanket and a good book, or watch a movie. And, of course, winter is the time for holidays!' },
                 style: { backgroundColor: "#344860" }, 
             },
             { 
@@ -127,7 +127,7 @@ function _createNotes() {
                 id: "n109", 
                 type: "note-txt", 
                 isPinned: false, 
-                info: { txt: 'I really like food. It is one of my favorite things. I love to eat and I love to cook. I am always trying new recipes and experimenting with new ingredients. I am always on the lookout for new and interesting foods to try. I love to eat out, but I also love to cook at home. I am always trying to find new and interesting ways to prepare food.' },
+                info: {title: "Thoughts", txt: 'I really like food. It is one of my favorite things. I love to eat and I love to cook. I am always trying new recipes and experimenting with new ingredients. I am always on the lookout for new and interesting foods to try. I love to eat out, but I also love to cook at home. I am always trying to find new and interesting ways to prepare food.' },
                 style: { backgroundColor: "#3296e1" }, 
             },
             { 
@@ -165,7 +165,7 @@ function _createNotes() {
                 id: "n114", 
                 type: "note-txt", 
                 isPinned: false, 
-                info: { txt: 'I\'m a cat lover, and I have two cats of my own. I\'m also a big fan of all things cat-related, from cat memes to cat videos. In short, if it\'s about cats, I\'m probably into it.' },
+                info: {title: "Thoughts", txt: 'I\'m a cat lover, and I have two cats of my own. I\'m also a big fan of all things cat-related, from cat memes to cat videos. In short, if it\'s about cats, I\'m probably into it.' },
                 style: { backgroundColor: "#eb705e" }, 
             },
             { 
@@ -196,7 +196,7 @@ function _createNotes() {
                 id: "n118", 
                 type: "note-txt", 
                 isPinned: false, 
-                info: { txt: 'Programming is a lot of fun. It\'s a great way to learn new things and to challenge yourself. There\'s a sense of satisfaction that comes from solving problems and creating something new.It\'s also a lot of work. But it\'s worth it. If you\'re looking for a challenge, something new to learn, and a way to use your creativity, programming is the perfect activity for you.' },
+                info: {title: "Thoughts", txt: 'Programming is a lot of fun. It\'s a great way to learn new things and to challenge yourself. There\'s a sense of satisfaction that comes from solving problems and creating something new.It\'s also a lot of work. But it\'s worth it. If you\'re looking for a challenge, something new to learn, and a way to use your creativity, programming is the perfect activity for you.' },
                 style: { backgroundColor: "#344860" }, 
             },
             {

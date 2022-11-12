@@ -16,13 +16,17 @@
     color: var(--clr1);
     outline: 1px solid var(--clr1);
     border-radius: 5px;
-    min-width: fit-content;
+    max-width: 100%;
     max-height: fit-content;
     display: flex;
     flex-direction: column;
     padding: 10px;
     margin-block-end: 10px;
     break-inside: avoid;
+}
+
+.note audio {
+    width: 100%;
 }
 
 .note-editor {

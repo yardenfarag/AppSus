@@ -56,6 +56,15 @@ export default {
                 this.filterBy = payload
             })
         },
+        mailToNote(mail) {
+            console.log(mail)
+          const note = noteService.getEmptyNote()
+            note.type = 'note-txt'
+            note.info.title = mail.subject
+            note.info.txt = mail.body
+            console.log(note)
+            this.addNote(note)
+        },
         updateNote(note) {
             console.log(this.notes)
             if (note.type === 'note-todos') {
@@ -146,6 +155,7 @@ export default {
             this.filterBy = payload
         })
         eventBus.on('saveNote', payload => {this.updateNote(payload)})
+        eventBus.on('mailToNote', payload => {this.mailToNote(payload)})
     },
     components: {
         noteList,
