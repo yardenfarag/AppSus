@@ -1,7 +1,8 @@
 .app-footer {
     background-color: var(--clr5);
     min-height: 10vh;
-    bottom: 0;
+    /* bottom: 0; */
+    /* position: ; */
     width: 100%;
     display: flex;
     flex-direction: column;

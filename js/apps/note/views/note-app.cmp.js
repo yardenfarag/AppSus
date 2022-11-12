@@ -33,12 +33,10 @@ export default {
             const dragIdx = this.notes.findIndex(note => note.id === object.noteId)
             const dropIdx = this.notes.findIndex(note => note.id === object.dropId)
             const dragNote = this.notes[dragIdx]
-            const dropNote = this.notes[dropIdx]
 
             const pinnedDragIdx = this.pinnedNotes.findIndex(note => note.id === object.noteId)
             const pinnedDropIdx = this.pinnedNotes.findIndex(note => note.id === object.dropId)
             const pinnedDrag = this.pinnedNotes[pinnedDragIdx]
-            const pinnedDrop = this.pinnedNotes[pinnedDropIdx]
 
             if (pinnedDrag) {
                 this.pinnedNotes.splice(pinnedDragIdx, 1)
@@ -107,6 +105,8 @@ export default {
             .then(() => {
                 const idx = this.notes.findIndex(note => note.id === noteId)
                 this.notes.splice(idx, 1)
+                const pinIdx = this.pinnedNotes.findIndex(note => note.id === noteId)
+                this.pinnedNotes.splice(pinIdx, 1)
                 showSuccessMsg('Note Removed Successfully!')
             })
             .catch(() => showErrorMsg('Something Went Wrong...'))
