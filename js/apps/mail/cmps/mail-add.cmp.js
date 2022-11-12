@@ -14,6 +14,7 @@ export default {
                 <textarea class="mail-input-body" placeholder="Enter your mail here =]" name="body" v-model="mailDraft.body" id="" rows="20"></textarea>
                 <i title="send" @click.prevent="save" class="mail-close-details fa-solid fa-paper-plane mail-send"></i>
             </form>
+            <button @click="makeNote">note</button>
 
         </section>
     `,
@@ -31,6 +32,9 @@ export default {
             this.mailDraft.type = 'sent'
             this.$parent.$emit('mailAdded', this.mailDraft)
             eventBus.emit('addMail', false)
+        },
+        makeNote(){
+            eventBus.emit('mailToNote', this.mailDraft)
         }
       
     }

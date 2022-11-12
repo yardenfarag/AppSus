@@ -54,6 +54,7 @@ export default {
     computed: {
         mailsToShow() {
             console.log(this.filterBy)
+
             const regex = new RegExp(this.filterBy.subject, 'i')
             var mails = this.mails.filter(mail => regex.test(mail.subject))
 
@@ -66,16 +67,34 @@ export default {
             if (this.filterBy.isStar) {
                 mails = mails.filter(mail => mail.isStar === this.filterBy.isStar)
             }
+                       
             if (this.filterBy.sortBy){
                 if(this.filterBy.sortBy === 'date'){
-                    console.log(this.filterBy.sortBy)
-                   mails.sort((a,b) => a.sendAt > b.sendAt) 
+                    mails = mails.sort(function (a, b) {
+                        if (a.sendAt < b.sendAt) {
+                            return -1
+                        }
+                        if (a.sendAt > b.sendAt) {
+                            return 1
+                        }
+                        return 0
+                    })
                 }
                 if(this.filterBy.sortBy === 'alpha'){
-                    mails.sort((a,b) => a.subject > b.subject) 
+
+                    mails = mails.sort(function (a, b) {
+                        if (a.subject < b.subject) {
+                            return -1
+                        }
+                        if (a.subject > b.subject) {
+                            return 1
+                        }
+                        return 0
+                    })
+            
+                    console.log(mails)
                 }
             }
-
             return mails
         },
 

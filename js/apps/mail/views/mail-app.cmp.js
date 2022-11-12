@@ -1,5 +1,5 @@
 import { mailService } from '../services/mail-service.js'
-import { eventBus } from '../../../general/services/event-bus.service.js'
+import { eventBus, showSuccessMsg, showErrorMsg } from '../../../general/services/event-bus.service.js'
 
 import mailList from '../cmps/mail-list.cmp.js'
 import mailSideNav from '../cmps/mail-side-nav.cmp.js'
@@ -40,11 +40,11 @@ export default {
                 .then(() => {
                     const idx = this.mailsData.findIndex(mail => mail.id === mailId)
                     this.mailsData.splice(idx, 1)
-                    // showSuccessMsg(`Car ${mailId} deleted`)
+                    showSuccessMsg(`Mail deleted`)
                 })
                 .catch(err =>{
                     console.log('OOPS', err)
-                    // showErrorMsg('Cannot remove mail')
+                    showErrorMsg('Cannot remove mail')
                 })
         },
         save(mail){
@@ -56,11 +56,11 @@ export default {
 
                     if(idx !== -1) return 
                     this.mailsData.unshift(mail)
-                    // showSuccessMsg(`mail saved (mail id: ${mail.id})`
+                    showSuccessMsg(`Mail Sent`)
                 })
                 .catch(err => {
                     console.log('OOps:', err)
-                    // showErrorMsg(`Cannot save mail`)
+                    showErrorMsg(`Cannot Sent mail`)
                 })
                 
         },
