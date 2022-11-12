@@ -2,11 +2,11 @@ export default {
 	template: `
         <header class="app-header">
             <router-link to="/">
-                <img class="logo" src="../../../assets/img/logo.png" alt="" />
+                <img class="logo" src="assets/img/logo.png" alt="" />
             </router-link>
             <nav :class="toggleMenuClass">
                 <router-link @click="toggleMenu" to="/">
-                    <img src="../../../assets/img/home.png" alt="" />
+                    <img src="assets/img/home.png" alt="" />
                 </router-link>  
                 <router-link @click="toggleMenu" to="/about">
                     <img src="../../../assets/img/about.png" alt="" />
