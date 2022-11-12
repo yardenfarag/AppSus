@@ -10,12 +10,12 @@ import mailDetails from '../apps/mail/views/mail-details.cmp.js'
 // import mailTrash from '../apps/mail/cmps/mail-trash.cmp.js'
 
 import noteApp from '../apps/note/views/note-app.cmp.js'
-import noteDetails from '../apps/note/views/note-app.cmp.js'
 
 import bookApp from '../apps/books/views/book-app.cmp.js'
 import bookDetails from '../apps/books/views/book-details.cmp.js'
 
 import aboutPage from '../general/views/app-about.cmp.js'
+import noteEdit from '../apps/note/cmps/note-edit.cmp.js'
 
 
 const routerOptions = {
@@ -53,11 +53,13 @@ const routerOptions = {
         },
         {
             path: '/note',
-            component: noteApp
-        },
-        {
-            path: '/note/:id',
-            component: noteDetails
+            component: noteApp,
+            children: [
+                {
+                    path: '/note/:id',
+                    component: noteEdit
+                }
+            ]
         },
         {
             path: '/book',

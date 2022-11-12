@@ -62,6 +62,7 @@ export default {
             note.type = 'note-txt'
             note.info.title = mail.subject
             note.info.txt = mail.body
+            note.isPinned = true
             console.log(note)
             this.addNote(note)
         },

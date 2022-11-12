@@ -1,4 +1,5 @@
 import { noteService } from '../services/note.service.js'
+import { eventBus } from '../../../general/services/event-bus.service.js'
 
 import noteTxt from '../cmps/note-txt.cmp.js'
 import noteImg from '../cmps/note-img.cmp.js'
@@ -22,7 +23,7 @@ export default {
                         <span @click="changeStyle(note.id, color)" class="note-color" v-for="color in colors" :style="{ 'background-color': color }">Co</span>
                     </div>
                     <button @click="duplicate(note.id)" class="note-editor-btn" title="Duplicate"><i class="fa-solid fa-copy"></i></button>
-                    <button @click="shareToMail(note.id)" class="note-editor-btn" title="Send via mail"><i class="fa-solid fa-envelope"></i></button>
+                    <button @click="shareToMail(note)" class="note-editor-btn" title="Send via mail"><i class="fa-solid fa-envelope"></i></button>
                     <router-link :to="'/note/' + note.id">
                         <button @click="toggleEditModal" class="note-editor-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
                     </router-link>
@@ -92,8 +93,8 @@ export default {
         changeStyle(noteId, color) {
             this.$parent.$emit('changeStyle', noteId, color)
         },
-        shareToMail(noteId) {
-            this.$parent.$emit('share', noteId)
+        shareToMail(note) {
+            eventBus.emit('noteToMail', note)
         },
         editNote(noteId) {
             this.$parent.$emit('edit', noteId)
