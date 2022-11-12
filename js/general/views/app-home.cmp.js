@@ -14,7 +14,7 @@ export default {
                 <section ref="apps" class="home-desc-main">
                
                     <article @click="articleClickes('note')" class="app-desc">
-                        <img src="../../../assets/img/home-page/note.jpg" alt="" />
+                        <img src="assets/img/home-page/note.jpg" alt="" />
                         <div class="home-app-text">
 
                             <h2>Notes</h2>
@@ -22,14 +22,14 @@ export default {
                         </div>
                     </article>
                     <article @click="articleClickes('mail')" class="app-desc">
-                        <img src="../../../assets/img/home-page/mail.jpg" alt="" />
+                        <img src="assets/img/home-page/mail.jpg" alt="" />
                         <div class="home-app-text">
                         <h2>E-mail</h2>
                         <p>This is a book about a girl who is taken to a world she thought only existed in fairytales.</p>
                         </div>
                     </article>
                     <article @click="articleClickes('book')" class="app-desc">
-                        <img src="../../../assets/img/home-page/books.jpg" alt="" />
+                        <img src="assets/img/home-page/books.jpg" alt="" />
                         <div class="home-app-text">
                         <h2>Books</h2>
                         <p>This is a book about a young girl who is taken to a land where she must find her way back home.</p>
