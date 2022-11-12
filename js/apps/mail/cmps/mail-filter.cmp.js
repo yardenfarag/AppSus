@@ -11,6 +11,10 @@ export default {
                    @input="filter"
                    placeholder="🔍search"  />
 
+            <button  @click="sortMails('date')" class="mail-filter-clock-btn"><i class="fa-solid fa-clock"></i></button>
+            <button  @click="sortMails('alpha')" class="mail-filter-title-btn"><i class="fa-solid fa-arrow-down-a-z"></i></button>
+            
+            
             <button v-if="!filterBy.isRead" @click="filterBy.isRead = !filterBy.isRead;filter();" class="mail-filter-read-btn"><i class="fa-regular fa-envelope"></i></button>
             <button v-if="filterBy.isRead" @click="filterBy.isRead = !filterBy.isRead;filter();" class="mail-filter-read-btn"><i class="fa-regular fa-envelope-open"></i></button>
            
@@ -30,6 +34,7 @@ export default {
                 type:'inbox',
                 isRead: false,
                 isStar: false,
+                sortBy: '',
             }
         }
     },
@@ -44,6 +49,11 @@ export default {
         },
         refresh(){
             location.reload()
+        },
+        sortMails(val){
+            this.filterBy.sortBy = val
+            console.log( this.filterBy.sortBy)
+            this.$emit('mailFilter', this.filterBy)
         }
     },
     created(){

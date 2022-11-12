@@ -22,3 +22,8 @@
     border: none;
     border-bottom: solid 1px var(--clr3);
 }
+
+.mail-body{
+    width: 200px;
+    height: 200px;
+}

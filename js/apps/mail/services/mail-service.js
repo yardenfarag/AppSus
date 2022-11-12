@@ -23,7 +23,7 @@ function get(mailId){
 }
 
 function getEmptyMail(subject='', body = '', to='') {
-    const isRead = false
+    const isRead = true
     const from = ''
     const type = 'draft'
     const isStar = false

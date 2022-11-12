@@ -45,6 +45,7 @@ export default {
                 type: 'inbox',
                 isRead: false,
                 isStar: false,
+                // sortBy: '',
             },
 
 
@@ -52,6 +53,7 @@ export default {
     },
     computed: {
         mailsToShow() {
+            console.log(this.filterBy)
             const regex = new RegExp(this.filterBy.subject, 'i')
             var mails = this.mails.filter(mail => regex.test(mail.subject))
 
@@ -63,6 +65,15 @@ export default {
             }
             if (this.filterBy.isStar) {
                 mails = mails.filter(mail => mail.isStar === this.filterBy.isStar)
+            }
+            if (this.filterBy.sortBy){
+                if(this.filterBy.sortBy === 'date'){
+                    console.log(this.filterBy.sortBy)
+                   mails.sort((a,b) => a.sendAt > b.sendAt) 
+                }
+                if(this.filterBy.sortBy === 'alpha'){
+                    mails.sort((a,b) => a.subject > b.subject) 
+                }
             }
 
             return mails
