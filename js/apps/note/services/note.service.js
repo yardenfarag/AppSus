@@ -154,7 +154,7 @@ function _createNotes() {
             { 
                 id: "n113", 
                 type: "note-todos", 
-                isPinned: true,
+                isPinned: false,
                 info: { 
                     txt: "To Dos", 
                     todos: ['Go to the Bank', 'Get Mail', 'Get Groceries', 'Call Mom'] 
@@ -176,19 +176,9 @@ function _createNotes() {
                 style: { backgroundColor: "#344860" }, 
             },
             { 
-                id: "n116", 
-                type: "note-todos", 
-                isPinned: true,
-                info: { 
-                    txt: "Features to Support", 
-                    todos: ['Note-Canvas', 'Note-Audio', 'Note-Map'] 
-                }, 
-                style: { backgroundColor: "#f1c500" }, 
-            },
-            { 
                 id: "n117", 
                 type: "note-img", 
-                isPinned: true,
+                isPinned: false,
                 info: { imgUrl: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8YnJhbmRpbmd8ZW58MHx8MHx8&w=1000&q=80', txt: "" }, 
                 style: { backgroundColor: "#3296e1" }, 
             },
@@ -199,17 +189,10 @@ function _createNotes() {
                 info: {title: "Thoughts", txt: 'Programming is a lot of fun. It\'s a great way to learn new things and to challenge yourself. There\'s a sense of satisfaction that comes from solving problems and creating something new.It\'s also a lot of work. But it\'s worth it. If you\'re looking for a challenge, something new to learn, and a way to use your creativity, programming is the perfect activity for you.' },
                 style: { backgroundColor: "#344860" }, 
             },
-            {
-                id: "n119",
-                type: "note-audio",
-                isPinned: true,
-                info: { txt: 'my first audio note', audUrl:'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3'},
-                style: { backgroundColor: "#eb705e" },
-            },
             { 
                 id: "n120", 
                 type: "note-todos", 
-                isPinned: true,
+                isPinned: false,
                 info: { 
                     txt: "To Dos", 
                     todos: ['Get up', 'Eat breakfast', 'Go to work', 'Come home', 'Eat dinner', 'Go to bed'] 
@@ -222,6 +205,65 @@ function _createNotes() {
                 isPinned: false,
                 info: { vidUrl: 'https://www.youtube.com/embed/mPZkdNFkNps', txt: "Relax" }, 
                 style: { backgroundColor: "#f1c500" }, 
+            },
+            { 
+                id: "n122", 
+                type: "note-txt", 
+                isPinned: true, 
+                info: {title: "About the App", txt: 'The Notes app is the perfect way to jot down ideas, make lists, and keep track of everything you need to do. ' },
+                style: { backgroundColor: "#49caae" }, 
+            },
+            { 
+                id: "n123", 
+                type: "note-txt", 
+                isPinned: false, 
+                info: {title: "About the Mail App", txt: 'The Email app is the perfect way to stay in touch with friends, family, and colleagues.' },
+                style: { backgroundColor: "#3296e1" }, 
+            },
+            { 
+                id: "n124", 
+                type: "note-txt", 
+                isPinned: false, 
+                info: {title: "About the Books App", txt: 'The Books app is the perfect way to find and read the latest bestsellers.' },
+                style: { backgroundColor: "#9957bb" }, 
+            },
+            { 
+                id: "n125", 
+                type: "note-img", 
+                isPinned: false,
+                info: { imgUrl: 'https://res.cloudinary.com/teepublic/image/private/s--eCn6hhEt--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_191919,e_outline:48/co_191919,e_outline:inner_fill:48/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1509628922/production/designs/2018878_1.jpg', txt: "🤍" }, 
+                style: { backgroundColor: "#344860" }, 
+            },
+            { 
+                id: "n126", 
+                type: "note-img", 
+                isPinned: true,
+                info: { imgUrl: 'https://play-lh.googleusercontent.com/5bQkqRWOtDq_cyV7obWRYx1vshxgsjHwYKKlGrVp7r7E5_RIAkruNpmsgjC22XAycw8', txt: "Go Rockets!🚀" }, 
+                style: { backgroundColor: "#344860" }, 
+            },
+            { 
+                id: "n127", 
+                type: "note-video", 
+                isPinned: false,
+                info: { vidUrl: 'https://www.youtube.com/embed/vUb4aOypX7A', txt: "Friday Playlist" }, 
+                style: { backgroundColor: "#54be76" }, 
+            },
+            { 
+                id: "n128", 
+                type: "note-todos", 
+                isPinned: true,
+                info: { 
+                    txt: "Check list for the trip", 
+                    todos: ['Ticket', 'Passport', 'Boarding Pass', 'Carry-on luggage', 'Personal items', 'Money', 'Identification'] 
+                }, 
+                style: { backgroundColor: "#f1c500" }, 
+            },
+            { 
+                id: "n129", 
+                type: "note-txt", 
+                isPinned: false, 
+                info: {title: "Snickers", txt: 'Once upon a time, there was a cat named Snickers. Snickers loved to run around and play all day. One day, when Snickers was out playing, a big dog came by and chased her. Snickers was terrified and ran away as fast as she could. She didn\'t stop running until she got home. Snickers was so scared that she decided to never go outside again.' },
+                style: { backgroundColor: "#eb705e" }, 
             },
         ]
 
