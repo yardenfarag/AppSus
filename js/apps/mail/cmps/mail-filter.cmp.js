@@ -23,7 +23,7 @@ export default {
 
             <button @click="refresh"><i class="fa-solid fa-arrows-rotate"></i></button>
             <button :disabled="pageIdx <= 0" @click="navPage(-1)"><i :class="disablePrev" class="page-nav-btn fa-solid fa-caret-left"></i></button>
-            <button :disabled="pageIdx >= 2" @click="navPage(1)"><i  :class="disableNext" class="page-nav-btn fa-solid fa-caret-right"></i></button>
+            <button :disabled="pageIdx >= 1" @click="navPage(1)"><i  :class="disableNext" class="page-nav-btn fa-solid fa-caret-right"></i></button>
 
             
         </section>
@@ -47,7 +47,7 @@ export default {
             if(this.pageIdx <= 0) return 'disabled'
         },
         disableNext(){
-            if(this.pageIdx >= 2) return 'disabled'
+            if(this.pageIdx >= 1) return 'disabled'
         }
     },
 

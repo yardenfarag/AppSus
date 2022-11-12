@@ -91,11 +91,12 @@ export default {
                     })
                 }
             }
+            var mailsToPage = [...mails]
             
-            if(this.pageIdx === 1)mails = mails.splice(this.pageIdx, this.mailInPage)
-            else mails = mails.splice((this.pageIdx*this.mailInPage), this.mailInPage)
+            if(this.pageIdx === 0)mailsToPage = mailsToPage.splice(this.pageIdx, this.mailInPage)
+            else mailsToPage = mailsToPage.splice((this.pageIdx*this.mailInPage), this.mailInPage)
 
-            return mails
+            return mailsToPage
         },
 
     },

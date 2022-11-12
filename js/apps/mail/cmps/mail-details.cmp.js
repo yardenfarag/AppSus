@@ -11,8 +11,6 @@ export default {
                 <h5>{{ mail.from }}</h5>
                 <p>{{ mail.body }}</p>
             </section>
-
-            <i title="send" @click="send" class="mail-close-details fa-solid fa-paper-plane mail-send"></i>
     </section>
     `,
     data() {

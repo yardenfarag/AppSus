@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    border-radius: 1rem;
 }
 
 .mail-details-content{
