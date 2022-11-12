@@ -91,6 +91,7 @@ export default {
                     })
                 }
             }
+            
             if(this.pageIdx === 1)mails = mails.splice(this.pageIdx, this.mailInPage)
             else mails = mails.splice((this.pageIdx*this.mailInPage), this.mailInPage)
 
