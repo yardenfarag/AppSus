@@ -3,7 +3,8 @@ export default {
     template: `
     <section class="mail-details-main">
 
-        <i @click="close" class="mail-close-details fa-solid fa-arrow-left"></i>
+        <!-- <i @click="close" class="mail-close-details fa-solid fa-arrow-left"></i> -->
+        <button @click="close" class="mail-close-details">←</button>
             <section class="mail-details-content flex">
 
                 <h3>{{ dateCalc }} - {{ mail.subject }}</h3>

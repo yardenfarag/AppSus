@@ -5,7 +5,7 @@ export default {
 
     template: `
         <section class="mail-filter flex">
-
+            <button @click="toggleMenu">☰</button>
             <input type="search" 
                    v-model="filterBy.subject"
                    @input="filter"
@@ -54,7 +54,10 @@ export default {
             this.filterBy.sortBy = val
             console.log( this.filterBy.sortBy)
             this.$emit('mailFilter', this.filterBy)
-        }
+        },
+        toggleMenu(){
+            document.body.classList.toggle('menu-open')
+        },
     },
     created(){
         eventBus.on('filterType', this.type)

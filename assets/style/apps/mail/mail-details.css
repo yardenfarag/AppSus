@@ -16,13 +16,21 @@
 
 .mail-close-details{
     position: absolute;
-    background-color: inherit;
     border: none;
+    background-color: inherit;
     width: fit-content;
     padding: 1rem;
     cursor: pointer;
     gap: 1rem;
     border-radius: 1rem;
+    font-size: 2rem;
+}
+
+.mail-close-add{
+    color: aqua;
+    height: 20px;
+    width: 20px;
+    background-color: aqua;
 }
 
 .mail-send{

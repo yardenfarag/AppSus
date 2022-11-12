@@ -81,4 +81,21 @@ font-size: 1.2rem;
 }
 
 
+@media (max-width: 850px){
 
+    .main-mail-preview{
+        max-width: 750px;
+        max-height: 800px;
+    }
+
+    .mail-preview{
+        /* flex-direction: column; */
+        color: aqua;
+    }
+
+    .mail-card-content{
+        flex-direction: column;
+    }
+  
+    
+}

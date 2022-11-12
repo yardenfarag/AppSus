@@ -7,7 +7,7 @@ export default {
     template: `
     
         <section class="add-mail-main ">
-        <i @click="close" class="mail-close-details fa-solid fa-arrow-left"></i>
+            <button @click="close" class="mail-close-details">←</button>
             <form class="mail-form flex">
                 <input required  class="mail-input" type="text" v-model="mailDraft.from" placeholder="for who?"/>
                 <input class="mail-input" type="text" v-model="mailDraft.subject" placeholder="Subject"/>
@@ -20,12 +20,15 @@ export default {
     `,
     data(){
         return{
-            mailDraft: mailService.getEmptyMail(),     
+            mailDraft: mailService.getEmptyMail(),  
+            quryParams: {},   
         }
     },
+
     methods:{
         close(){
-            eventBus.emit('addMail', false)
+            this.mailDraft.closed = true
+            eventBus.emit('addMail', 'draft')
             this.$parent.$emit('mailAdded', this.mailDraft)
         },
         save(){
@@ -36,7 +39,12 @@ export default {
         makeNote(){
             eventBus.emit('mailToNote', this.mailDraft)
             this.$router.push('/note')
-        }
-      
+        },
+        // setUrl(){
+        //     const url = `?add=true`
+        // },
+        // renderByQuery(){
+
+        // },     
     }
 }

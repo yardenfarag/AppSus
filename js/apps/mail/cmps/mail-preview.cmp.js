@@ -67,6 +67,7 @@ export default {
             this.isHoverd = false
         },
         remove(mailId) {
+            if(this.mail.type !== 'trash') return this.mail.type = 'trash'
             this.$parent.$emit('remove', mailId)
         },
         details(mail) {

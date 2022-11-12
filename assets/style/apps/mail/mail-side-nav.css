@@ -48,3 +48,28 @@
 .add-mail-btn:hover {
     background-color: var(--clr2);
 }
+
+.mail-screen{
+    position: fixed;
+    height: 80vh;
+    width: 100vh;
+    background-color: black;
+}
+
+@media (max-width: 1100px){
+
+    .mail-side-nav{
+        position: fixed;
+        /* top: 5vh; */
+        /* left: 0; */
+        min-width: 30vh;
+        transform: translatex(-100%);
+        transition: 0.6s;
+    }
+    
+    body.menu-open .mail-side-nav{
+        transform: translatex(0);
+        box-shadow: 5px 3px 11px;;
+
+    }
+}

@@ -9,9 +9,9 @@ import mailSideNav from '../cmps/mail-side-nav.cmp.js'
 export default {
     name: 'mail-app',
     template: `
+                
             <section class="mail-app">
 
-            
 
             <section class="mail-main-container flex">
 
@@ -35,7 +35,7 @@ export default {
     },
     methods: {
         removeMail(mailId){
-            console.log('removing?')
+            
             mailService.remove(mailId)
                 .then(() => {
                     const idx = this.mailsData.findIndex(mail => mail.id === mailId)
@@ -56,7 +56,9 @@ export default {
 
                     if(idx !== -1) return 
                     this.mailsData.unshift(mail)
-                    showSuccessMsg(`Mail Sent`)
+                    console.log(mail)
+                    if(mail.closed) showSuccessMsg(`Mail Saved To Draft`)
+                    else showSuccessMsg(`Mail Sent`)
                 })
                 .catch(err => {
                     console.log('OOps:', err)

@@ -10,8 +10,9 @@
 }
 
 .mail-form{
-    margin-top: 2.2rem;
+    margin-top: 4rem;
     flex-direction: column;
+    background-color: inherit;
 }
 
 .mail-input{
