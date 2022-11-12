@@ -15,6 +15,16 @@
     outline: 5px inset var(--secondary-clr2);
   }
 
+  .note-edit-modal textarea {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 9vh;
+    border:none;
+    border-radius: 5px;
+    margin-block: 10px;
+    width: 30vw;
+    background-color: var(--clr1);
+  }
+
 .note-edit-modal form {
     display: flex;
     flex-direction: column;
