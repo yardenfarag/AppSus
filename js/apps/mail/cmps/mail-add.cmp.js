@@ -35,6 +35,7 @@ export default {
         },
         makeNote(){
             eventBus.emit('mailToNote', this.mailDraft)
+            this.$router.push('/note')
         }
       
     }
